@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{7}
+\begin{thebibliography}{11}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -128,6 +128,55 @@ doi:\doiurl{10.1007/s10741-016-9586-z}
 \end{botherref}
 \endbibitem
 
+%%% 8
+\bibitem{Leudec}
+\begin{botherref}
+\oauthor{\bsnm{J}, \binits{L.-G.}}:
+Mitochondrial dynamics and mitophagy in skeletal muscle health and aging.
+International Journal of Molecular Sciences
+\textbf{22}
+(2021).
+doi:\doiurl{10.3390/ijms22158179}
+\end{botherref}
+\endbibitem
+
+%%% 9
+\bibitem{chen}
+\begin{botherref}
+\oauthor{\bsnm{Chen}, \binits{T.H.}}:
+Mitochondrial dysfunction as an underlying cause of skeletal muscle disorders.
+International Journal of Molecular Sciences
+\textbf{23}
+(2022).
+doi:\doiurl{10.3390/ijms232112926}
+\end{botherref}
+\endbibitem
+
+%%% 10
+\bibitem{Boengler}
+\begin{botherref}
+\oauthor{\bsnm{Boengler}, \binits{K.}}:
+Mitochondria and ageing: role in heart, skeletal muscle and adipose tissue.
+Journal of Cachexia, Sarcopenia and Muscle
+\textbf{8}
+(2017).
+doi:\doiurl{10.1002/jcsm.12178}
+\end{botherref}
+\endbibitem
+
+%%% 11
+\bibitem{java}
+\begin{botherref}
+\oauthor{\bsnm{Javadov}, \binits{S.}}:
+Mitochondria-targeted antioxidant preserves contractile properties and
+  mitochondrial function of skeletal muscle in aged rats.
+Oncotarget
+\textbf{6}
+(2015).
+doi:\doiurl{10.18632/oncotarget.5783}
+\end{botherref}
+\endbibitem
+
 \end{thebibliography}
 
 \newcommand{\BMCxmlcomment}[1]{}
@@ -216,6 +265,50 @@ doi:\doiurl{10.1007/s10741-016-9586-z}
   <source>Heart Failure Reviews</source>
   <pubdate>2017</pubdate>
   <volume>22</volume>
+</bibl>
+
+<bibl id="B8">
+  <title><p>Mitochondrial dynamics and mitophagy in skeletal muscle health and
+  aging</p></title>
+  <aug>
+    <au><snm>J</snm><fnm>LG</fnm></au>
+  </aug>
+  <source>International Journal of Molecular Sciences</source>
+  <pubdate>2021</pubdate>
+  <volume>22</volume>
+</bibl>
+
+<bibl id="B9">
+  <title><p>Mitochondrial Dysfunction as an Underlying Cause of Skeletal Muscle
+  Disorders</p></title>
+  <aug>
+    <au><snm>Chen</snm><fnm>TH</fnm></au>
+  </aug>
+  <source>International Journal of Molecular Sciences</source>
+  <pubdate>2022</pubdate>
+  <volume>23</volume>
+</bibl>
+
+<bibl id="B10">
+  <title><p>Mitochondria and ageing: role in heart, skeletal muscle and adipose
+  tissue</p></title>
+  <aug>
+    <au><snm>Boengler</snm><fnm>K</fnm></au>
+  </aug>
+  <source>Journal of Cachexia, Sarcopenia and Muscle</source>
+  <pubdate>2017</pubdate>
+  <volume>8</volume>
+</bibl>
+
+<bibl id="B11">
+  <title><p>Mitochondria-targeted antioxidant preserves contractile properties
+  and mitochondrial function of skeletal muscle in aged rats</p></title>
+  <aug>
+    <au><snm>Javadov</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Oncotarget</source>
+  <pubdate>2015</pubdate>
+  <volume>6</volume>
 </bibl>
 
 </refgrp>
