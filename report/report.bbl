@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{11}
+\begin{thebibliography}{16}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -129,6 +129,67 @@ doi:\doiurl{10.1007/s10741-016-9586-z}
 \endbibitem
 
 %%% 8
+\bibitem{McConell2008}
+\begin{bchapter}
+\bauthor{\bsnm{McConell}, \binits{G.K.}},
+\bauthor{\bsnm{Wadley}, \binits{G.D.}}:
+\bctitle{Potential role of nitric oxide in contraction-stimulated glucose
+  uptake and mitochondrial biogenesis in skeletal muscle}.
+In: \bbtitle{Clinical and Experimental Pharmacology and Physiology},
+vol. \bseriesno{35}
+(\byear{2008}).
+doi:\doiurl{10.1111/j.1440-1681.2008.05038.x}
+\end{bchapter}
+\endbibitem
+
+%%% 9
+\bibitem{Noone2022}
+\begin{botherref}
+\oauthor{\bsnm{Noone}, \binits{J.}},
+\oauthor{\bsnm{O'Gorman}, \binits{D.J.}},
+\oauthor{\bsnm{Kenny}, \binits{H.C.}}:
+OPA1 regulation of mitochondrial dynamics in skeletal and cardiac muscle
+(2022).
+doi:\doiurl{10.1016/j.tem.2022.07.003}
+\end{botherref}
+\endbibitem
+
+%%% 10
+\bibitem{Hargreaves2020}
+\begin{botherref}
+\oauthor{\bsnm{Hargreaves}, \binits{M.}},
+\oauthor{\bsnm{Spriet}, \binits{L.L.}}:
+Skeletal muscle energy metabolism during exercise
+(2020).
+doi:\doiurl{10.1038/s42255-020-0251-4}
+\end{botherref}
+\endbibitem
+
+%%% 11
+\bibitem{Egan2013}
+\begin{botherref}
+\oauthor{\bsnm{Egan}, \binits{B.}},
+\oauthor{\bsnm{Zierath}, \binits{J.R.}}:
+Exercise metabolism and the molecular regulation of skeletal muscle adaptation
+(2013).
+doi:\doiurl{10.1016/j.cmet.2012.12.012}
+\end{botherref}
+\endbibitem
+
+%%% 12
+\bibitem{Hood2019}
+\begin{botherref}
+\oauthor{\bsnm{Hood}, \binits{D.A.}},
+\oauthor{\bsnm{Memme}, \binits{J.M.}},
+\oauthor{\bsnm{Oliveira}, \binits{A.N.}},
+\oauthor{\bsnm{Triolo}, \binits{M.}}:
+Maintenance of Skeletal Muscle Mitochondria in Health, Exercise, and Aging
+(2019).
+doi:\doiurl{10.1146/annurev-physiol-020518-114310}
+\end{botherref}
+\endbibitem
+
+%%% 13
 \bibitem{Leudec}
 \begin{botherref}
 \oauthor{\bsnm{J}, \binits{L.-G.}}:
@@ -140,7 +201,7 @@ doi:\doiurl{10.3390/ijms22158179}
 \end{botherref}
 \endbibitem
 
-%%% 9
+%%% 14
 \bibitem{chen}
 \begin{botherref}
 \oauthor{\bsnm{Chen}, \binits{T.H.}}:
@@ -152,7 +213,7 @@ doi:\doiurl{10.3390/ijms232112926}
 \end{botherref}
 \endbibitem
 
-%%% 10
+%%% 15
 \bibitem{Boengler}
 \begin{botherref}
 \oauthor{\bsnm{Boengler}, \binits{K.}}:
@@ -164,7 +225,7 @@ doi:\doiurl{10.1002/jcsm.12178}
 \end{botherref}
 \endbibitem
 
-%%% 11
+%%% 16
 \bibitem{java}
 \begin{botherref}
 \oauthor{\bsnm{Javadov}, \binits{S.}}:
@@ -268,6 +329,68 @@ doi:\doiurl{10.18632/oncotarget.5783}
 </bibl>
 
 <bibl id="B8">
+  <title><p>Potential role of nitric oxide in contraction-stimulated glucose
+  uptake and mitochondrial biogenesis in skeletal muscle</p></title>
+  <aug>
+    <au><snm>McConell</snm><fnm>GK</fnm></au>
+    <au><snm>Wadley</snm><fnm>GD</fnm></au>
+  </aug>
+  <source>Clinical and Experimental Pharmacology and Physiology</source>
+  <pubdate>2008</pubdate>
+  <volume>35</volume>
+</bibl>
+
+<bibl id="B9">
+  <title><p>OPA1 regulation of mitochondrial dynamics in skeletal and cardiac
+  muscle</p></title>
+  <aug>
+    <au><snm>Noone</snm><fnm>J</fnm></au>
+    <au><snm>O'Gorman</snm><fnm>DJ</fnm></au>
+    <au><snm>Kenny</snm><fnm>HC</fnm></au>
+  </aug>
+  <source>Trends in Endocrinology and Metabolism</source>
+  <pubdate>2022</pubdate>
+  <volume>33</volume>
+</bibl>
+
+<bibl id="B10">
+  <title><p>Skeletal muscle energy metabolism during exercise</p></title>
+  <aug>
+    <au><snm>Hargreaves</snm><fnm>M</fnm></au>
+    <au><snm>Spriet</snm><fnm>LL</fnm></au>
+  </aug>
+  <source>Nature Metabolism</source>
+  <pubdate>2020</pubdate>
+  <volume>2</volume>
+</bibl>
+
+<bibl id="B11">
+  <title><p>Exercise metabolism and the molecular regulation of skeletal muscle
+  adaptation</p></title>
+  <aug>
+    <au><snm>Egan</snm><fnm>B</fnm></au>
+    <au><snm>Zierath</snm><fnm>JR</fnm></au>
+  </aug>
+  <source>Cell Metabolism</source>
+  <pubdate>2013</pubdate>
+  <volume>17</volume>
+</bibl>
+
+<bibl id="B12">
+  <title><p>Maintenance of Skeletal Muscle Mitochondria in Health, Exercise,
+  and Aging</p></title>
+  <aug>
+    <au><snm>Hood</snm><fnm>DA</fnm></au>
+    <au><snm>Memme</snm><fnm>JM</fnm></au>
+    <au><snm>Oliveira</snm><fnm>AN</fnm></au>
+    <au><snm>Triolo</snm><fnm>M</fnm></au>
+  </aug>
+  <source>Annual Review of Physiology</source>
+  <pubdate>2019</pubdate>
+  <volume>81</volume>
+</bibl>
+
+<bibl id="B13">
   <title><p>Mitochondrial dynamics and mitophagy in skeletal muscle health and
   aging</p></title>
   <aug>
@@ -278,7 +401,7 @@ doi:\doiurl{10.18632/oncotarget.5783}
   <volume>22</volume>
 </bibl>
 
-<bibl id="B9">
+<bibl id="B14">
   <title><p>Mitochondrial Dysfunction as an Underlying Cause of Skeletal Muscle
   Disorders</p></title>
   <aug>
@@ -289,7 +412,7 @@ doi:\doiurl{10.18632/oncotarget.5783}
   <volume>23</volume>
 </bibl>
 
-<bibl id="B10">
+<bibl id="B15">
   <title><p>Mitochondria and ageing: role in heart, skeletal muscle and adipose
   tissue</p></title>
   <aug>
@@ -300,7 +423,7 @@ doi:\doiurl{10.18632/oncotarget.5783}
   <volume>8</volume>
 </bibl>
 
-<bibl id="B11">
+<bibl id="B16">
   <title><p>Mitochondria-targeted antioxidant preserves contractile properties
   and mitochondrial function of skeletal muscle in aged rats</p></title>
   <aug>
