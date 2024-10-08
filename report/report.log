@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.2)  4 OCT 2024 18:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.2)  8 OCT 2024 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -419,15 +419,13 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 47.
 
 \address@aff1=\toks35
-(tex_files/introduction.tex) (tex_files/material_methods.tex)
-(tex_files/resultados.tex) (tex_files/discusion.tex)
-(tex_files/conclusiones.tex)
+(tex_files/introduction.tex
 LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 118.
-
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 15.
  [1{C:/Users/Benji/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
-] (report.bbl) [2]
+]) (tex_files/material_methods.tex) (tex_files/resultados.tex)
+(tex_files/discusion.tex) (tex_files/conclusiones.tex) (report.bbl) [2]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (report.aux)
@@ -444,10 +442,10 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: A3EA61EFFBF3D2DE331C9EED6C20E6BE;629.
  ) 
 Here is how much of TeX's memory you used:
- 10422 strings out of 474485
- 163109 string characters out of 5743734
- 1943542 words of memory out of 5000000
- 32538 multiletter control sequences out of 15000+600000
+ 10427 strings out of 474485
+ 163180 string characters out of 5743734
+ 1942542 words of memory out of 5000000
+ 32543 multiletter control sequences out of 15000+600000
  564385 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,9n,79p,899b,557s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -458,7 +456,7 @@ blic/amsfonts/cm/cmss17.pfb><C:/Users/Benji/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmss8.pfb><C:/Users/Benji/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Benji/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb>
-Output written on report.pdf (2 pages, 105846 bytes).
+Output written on report.pdf (2 pages, 107487 bytes).
 PDF statistics:
  136 PDF objects out of 1000 (max. 8388607)
  32 named destinations out of 1000 (max. 500000)
