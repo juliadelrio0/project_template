@@ -1,1 +1,34 @@
 \section{Materiales y métodos}
+
+
+\subsection{Datos Utilizados}
+
+El estudio se basó en una lista de genes que se obtuvo de la base de datos NCBI (National Center for Biotechnology Information). Esta lista, en formato de texto plano, contenía información relevante sobre los genes relacionados con la función mitocondrial y su expresión. La lista incluía dos columnas:
+
+ID: Un identificador único del gen en la base de datos NCBI, en el formato NCBIGene:<número>.
+Nombre: El nombre correspondiente del gen, que describe su función o tipo.
+
+Ejemplo de las primeras entradas de los datos utilizados:
+id                  name
+NCBIGene:10939      AFG3L2
+NCBIGene:55572      FOXRED1
+NCBIGene:4508       MT-ATP6
+NCBIGene:4512       MT-CO1
+...
+
+
+\subsection{Procesamiento de Datos}
+
+Los datos fueron procesados utilizando Python, empleando las bibliotecas pandas y NumPy. El procesamiento se llevó a cabo en los siguientes pasos:
+
+\subsubsection{Carga  de Datos:} Se utilizó la función read_csv de pandas para importar los datos desde el archivo de texto, especificando que el separador de columnas era un tabulador (\t).
+
+\subsubsection{Limpieza de Datos:} Se realizó una verificación de duplicados y se eliminaron las filas con datos incompletos o nulos.
+
+\subsubsection{Estructuración: } Se organizó la información en un DataFrame de pandas, que permite un análisis más fácil y eficiente.
+
+
+
+
+
+
