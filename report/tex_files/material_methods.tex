@@ -1,32 +1,56 @@
 \section{Materiales y métodos}
 
 
-\subsection{Datos Utilizados}
+\subsection{\textbf{Datos Utilizados}}
 
 El estudio se basó en una lista de genes que se obtuvo de la base de datos NCBI (National Center for Biotechnology Information). Esta lista, en formato de texto plano, contenía información relevante sobre los genes relacionados con la función mitocondrial y su expresión. La lista incluía dos columnas:
 
-ID: Un identificador único del gen en la base de datos NCBI, en el formato NCBIGene:<número>.
+ID: Un identificador único del gen en la base de datos NCBI, en el formato NCBIGene :<número>.
 Nombre: El nombre correspondiente del gen, que describe su función o tipo.
 
 Ejemplo de las primeras entradas de los datos utilizados:
+
 id                  name
+
 NCBIGene:10939      AFG3L2
+
 NCBIGene:55572      FOXRED1
+
 NCBIGene:4508       MT-ATP6
+
 NCBIGene:4512       MT-CO1
+
 ...
 
 
-\subsection{Procesamiento de Datos}
+\subsection{\textbf{Herramientas Utilizadas}}
+
+Para la implementación del análisis de los datos y la visualización de la red se utilizó Python.
+
+La bibliotecas utilizadas fueron Pandas (manipulación de los datos), Requests (para realizar solicitudes HTTP a la API de STRINGdb y obtener datos de interacciones proteicas), Networkx (para crear, manipular y visualizar grafos de interacciones) y Matplotlib (para la visualización gráfica de los datos en forma de red).
+
+
+
+\subsection{\textbf{Métodos}}
+
+
+\subsubsection{\textbf{Procesamiento de Datos}}
 
 Los datos fueron procesados utilizando Python, empleando las bibliotecas pandas y NumPy. El procesamiento se llevó a cabo en los siguientes pasos:
 
-\subsubsection{Carga  de Datos:} Se utilizó la función read_csv de pandas para importar los datos desde el archivo de texto, especificando que el separador de columnas era un tabulador (\t).
+Para cargar los datos se utilizó la función 'readcsv' de pandas para importar los datos desde el archivo de texto, especificando que el separador de columnas era un tabulador (\t).
 
-\subsubsection{Limpieza de Datos:} Se realizó una verificación de duplicados y se eliminaron las filas con datos incompletos o nulos.
+Después de cargar los datos, se realizó una verificación de duplicados y se eliminaron las filas con datos incompletos o nulos.
 
-\subsubsection{Estructuración: } Se organizó la información en un DataFrame de pandas, que permite un análisis más fácil y eficiente.
+Se organizó la información en un DataFrame de pandas, que permite un análisis más fácil y eficiente.
 
+\subsubsection{\textbf{Construcción de la red de los genes}}
+
+La red de interacciones entre genes fue construida utilizando la biblioteca NetworkX. Para la creación de la red, cada gen de la lista se representó como un nodo, y las interacciones entre los genes se añadieron mediante aristas que pueden representar coexpresión u otras relaciones biológicas.
+
+Solicitudes a STRINGdb: Para realizar la solicitud a la API de STRING, se pasaron una serie de parámetros: Lista de Genes: Se utilizaron los nombres de los genes extraídos de la base de datos NCBI. Especie: Se especificó que los datos eran de Homo sapiens (código NCBI: 9606). Umbral de Confianza: Se estableció en 800, lo que indica que se busca un nivel alto de confianza en las interacciones reportadas. Tipo de Red: Se eligió el tipo de red 'confidence' para obtener interacciones basadas en la confianza. Identificación de la Aplicación: Se incluyó una identificación de la solicitud para el seguimiento de las peticiones. 
+
+Visualización de la Red: Para la visualización de la red, se utilizó la biblioteca Matplotlib. Se generó un gráfico en el que los nodos representan los genes y las aristas representan las interacciones, con el ancho de las aristas proporcional a la confianza de la interacción. Este enfoque proporciona una representación visual intuitiva de las relaciones entre los genes
 
 
 
