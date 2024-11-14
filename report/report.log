@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.2)  7 NOV 2024 20:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.2)  14 NOV 2024 13:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -495,7 +495,7 @@ Here is how much of TeX's memory you used:
  32561 multiletter control sequences out of 15000+600000
  565733 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,9n,79p,899b,557s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,10n,79p,899b,557s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Benji\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Users/Benji/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/Benji/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -508,7 +508,7 @@ ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Us
 ers/Benji/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.p
 fb><C:/Users/Benji/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmti10.pfb>
-Output written on report.pdf (5 pages, 174386 bytes).
+Output written on report.pdf (5 pages, 174470 bytes).
 PDF statistics:
  207 PDF objects out of 1000 (max. 8388607)
  43 named destinations out of 1000 (max. 500000)
