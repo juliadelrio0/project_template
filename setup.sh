@@ -3,7 +3,7 @@
 # Configuración inicial
 echo "Configurando el entorno..."
 
-# Verificar si Python está instalado
+# Verificar si Python3 está instalado
 if ! command -v python3 &> /dev/null; then
     echo "Error: Python3 no está instalado. Por favor, instálalo antes de continuar."
     exit 1
@@ -21,12 +21,23 @@ fi
 # Activar el entorno virtual
 source env/bin/activate
 
-# Instalar las dependencias
-echo "Instalando dependencias..."
+# Instalar las dependencias de Python
+echo "Instalando dependencias de Python..."
 pip install --upgrade pip
-pip install requests
+pip install requests pandas
 
 # Desactivar el entorno virtual
 deactivate
 
+# Verificar si R está instalado
+if ! command -v R &> /dev/null; then
+    echo "Error: R no está instalado. Por favor, instálalo antes de continuar."
+    exit 1
+fi
+
+# Instalar las dependencias en R (igraph)
+echo "Instalando dependencias en R..."
+Rscript -e "if (!requireNamespace('igraph', quietly = TRUE)) install.packages('igraph')"
+
 echo "Configuración completada con éxito."
+
