@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.2)  28 NOV 2024 11:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.2)  29 NOV 2024 12:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -420,9 +420,61 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
 
 \address@aff1=\toks35
 (tex_files/introduction.tex
+
+LaTeX Warning: Citation `Spinelli2018' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Citation `Friedman2014' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Citation `Memme2021' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Citation `Smith2023' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Citation `QuintanaCabrera2023' on page 1 undefined on input line
+ 4.
+
+
+LaTeX Warning: Citation `Chan2020' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Citation `Liu2017' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Citation `McConell2008' on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Citation `Noone2022' on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Citation `Hargreaves2020' on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Citation `Egan2013' on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Citation `Hood2019' on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Citation `Leudec' on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Citation `Leudec' on page 1 undefined on input line 8.
+
+
+LaTeX Warning: Citation `chen' on page 1 undefined on input line 8.
+
+
+LaTeX Warning: Citation `Boengler' on page 1 undefined on input line 8.
+
+
+LaTeX Warning: Citation `java' on page 1 undefined on input line 8.
+
 LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <8> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 12.
- [1{C:/Users/Benji/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+[1{C:/Users/Benji/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 ]
 Underfull \hbox (badness 1189) in paragraph at lines 12--13
@@ -431,9 +483,21 @@ u-la-dos a la pa-tolog^^S^^Pa
  []
 
 ) (tex_files/material_methods.tex
+
+LaTeX Warning: Citation `jimenez2019introduccion' on page 2 undefined on input 
+line 11.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 9--12
 
  []
+
+
+LaTeX Warning: Citation `Python_Teams' on page 2 undefined on input line 16.
+
+
+LaTeX Warning: Citation `kohler2014human' on page 2 undefined on input line 22.
+
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 20--23
@@ -441,14 +505,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--23
  []
 
 
+LaTeX Warning: Citation `szklarczyk2015string' on page 2 undefined on input lin
+e 29.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 27--30
 
  []
 
+
+LaTeX Warning: Citation `jenuth1999ncbi' on page 2 undefined on input line 35.
+
 [2]
+
+LaTeX Warning: Citation `valdez2016analisis' on page 3 undefined on input line 
+46.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 44--47
 
  []
+
+
+LaTeX Warning: Citation `mckinney2011pandas' on page 3 undefined on input line 
+51.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 49--52
@@ -456,14 +536,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--52
  []
 
 
+LaTeX Warning: Citation `chandra2015python' on page 3 undefined on input line 5
+6.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 54--57
 
  []
 
 
+LaTeX Warning: Citation `hagberg2020networkx' on page 3 undefined on input line
+ 61.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 59--62
 
  []
+
+
+LaTeX Warning: Citation `ari2014matplotlib' on page 3 undefined on input line 6
+6.
 
 [3]
 Overfull \hbox (39.28983pt too wide) in paragraph at lines 93--94
@@ -472,7 +564,11 @@ do la funci^^Son \OT1/cmr/m/it/10 graph[]from[]data[]frame()\OT1/cmr/m/n/10 ,
  []
 
 [4]) (tex_files/resultados.tex) (tex_files/discusion.tex)
-(tex_files/conclusiones.tex) (report.bbl) [5]
+(tex_files/conclusiones.tex) (report.bbl
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <7> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 271.
+
+ [5]) [6]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (report.aux)
@@ -485,17 +581,23 @@ L3 programming layer <2024-01-04>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: A0339D8FE28D3BDE38D472B489CEB6CD;2183.
  ) 
 Here is how much of TeX's memory you used:
- 10460 strings out of 474485
- 163587 string characters out of 5743734
+ 10490 strings out of 474485
+ 164180 string characters out of 5743734
  1941542 words of memory out of 5000000
- 32561 multiletter control sequences out of 15000+600000
- 565733 words of font info for 62 fonts, out of 8000000 for 9000
+ 32580 multiletter control sequences out of 15000+600000
+ 566084 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,10n,79p,899b,557s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,10n,79p,905b,723s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Benji\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Users/Benji/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/Benji/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -508,9 +610,9 @@ ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Us
 ers/Benji/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.p
 fb><C:/Users/Benji/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmti10.pfb>
-Output written on report.pdf (5 pages, 174470 bytes).
+Output written on report.pdf (6 pages, 174979 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
+ 206 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

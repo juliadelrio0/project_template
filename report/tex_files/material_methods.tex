@@ -8,31 +8,31 @@
 
 \textbf{R} es un lenguaje de programación y un entorno estadístico muy utilizado en bioinformática, análisis de datos y ciencia de datos.
 Sirve para realizar análisis estadísticos complejos, visualización de datos y manipulación de datos biológicos, como análisis de expresión genética para lo que lo estamos utilizando en este caso.
-Fue desarrollado por Robert Gentleman y Ross Ihaka en la Universidad de Auckland, Nueva Zelanda, y es un proyecto de código abierto mantenido por la comunidad R.\\
+Fue desarrollado por Robert Gentleman y Ross Ihaka en la Universidad de Auckland, Nueva Zelanda, y es un proyecto de código abierto mantenido por la comunidad R.\cite{jimenez2019introduccion}\\
 
 
 \textbf{Python} es un lenguaje de programación, conocido por su simplicidad, versatilidad y eficiencia a la hora de programar.
 Se utiliza en análisis de datos, desarrollo de modelos, análisis bioinformático, y en el manejo y procesamiento de grandes volúmenes de datos biológicos.
-Fue creado por Guido van Rossum y ha crecido hasta convertirse en uno de los lenguajes más populares, con una comunidad activa que proporciona múltiples herramientas y bibliotecas.
+Fue creado por Guido van Rossum y ha crecido hasta convertirse en uno de los lenguajes más populares, con una comunidad activa que proporciona múltiples herramientas y bibliotecas.\cite{Python_Teams}
 \subsubsection{Bases de Datos}
 
 
 \textbf{HPO} (Human Phenotype Ontology) es una base de datos que proporciona una clasificación estándar de los términos fenotípicos humanos, cada uno con un identificador único.
 En el contexto de la investigación genética, HPO permite relacionar los fenotipos observables ("mitocondrias anormales en el tejido muscular", identificado por HP:0008316) con genes y enfermedades específicas. Esto facilita el análisis y busca de datos genéticos en función de características fenotípicas.
-Es mantenido por la comunidad científica, específicamente por el equipo de Monarch Initiative, para mejorar la precisión en los estudios de fenotipos y genética humana.\\
+Es mantenido por la comunidad científica, específicamente por el equipo de Monarch Initiative, para mejorar la precisión en los estudios de fenotipos y genética humana.\cite{kohler2014human}\\
 
 
 
 
 \textbf{StringDB} es una base de datos que contiene información sobre interacciones proteína-proteína (PPI), recopilada de diversas fuentes como experimentos, bases de datos públicas y predicciones computacionales.
 Esta base de datos permite investigar redes de proteínas interconectadas, facilitando el análisis de cómo las proteínas interactúan en diferentes contextos biológicos, algo esencial en estudios genéticos como los relacionados con HPO.
-Desarrollada por un consorcio de investigadores y está disponible como un recurso en línea gratuito para la comunidad científica.\\
+Desarrollada por un consorcio de investigadores y está disponible como un recurso en línea gratuito para la comunidad científica.\cite{szklarczyk2015string}\\
 
  
 
 El \textbf{NCBI} (National Center for Biotechnology Information) es un centro de investigación en biotecnología de Estados Unidos que proporciona acceso a una vasta colección de bases de datos biológicas y genómicas.
 Es utilizado para acceder a datos sobre genes, proteínas y secuencias genómicas, y proporciona herramientas de análisis. Nosotros lo utilizamos junto a HPO,para facilitar la correlación entre genes específicos y fenotipos.
-Fue fundado por los Institutos Nacionales de Salud (NIH) de Estados Unidos y es un recurso fundamental para la investigación genética y bioinformática.
+Fue fundado por los Institutos Nacionales de Salud (NIH) de Estados Unidos y es un recurso fundamental para la investigación genética y bioinformática.\cite{jenuth1999ncbi}
 
 
 
@@ -43,27 +43,27 @@ Fue fundado por los Institutos Nacionales de Salud (NIH) de Estados Unidos y es 
 
 \textbf{Igraph} es una biblioteca para el análisis y la visualización de redes complejas, desarrollada en múltiples lenguajes, incluyendo Python y R.
 En bioinformática, se usa para construir y analizar redes de interacciones biológicas, como redes de proteínas o genes, ayudando a visualizar cómo las proteínas relacionadas con un fenotipo específico pueden interactuar entre sí.
-Desarrollado por una comunidad internacional de programadores y científicos.\\
+Desarrollado por una comunidad internacional de programadores y científicos.\cite{valdez2016analisis}\\
 
 
 \textbf{Pandas} es una biblioteca en Python que facilita la manipulación y el análisis de datos mediante estructuras de datos como DataFrames.
 En estudios bioinformáticos, pandas se utiliza para manejar y procesar grandes volúmenes de datos, como los obtenidos de bases de datos genéticas. Es útil para organizar los datos de HPO y facilitar su análisis.
-Fue creada por Wes McKinney y es ahora una biblioteca ampliamente adoptada en el ámbito de la ciencia de datos.\\
+Fue creada por Wes McKinney y es ahora una biblioteca ampliamente adoptada en el ámbito de la ciencia de datos.\cite{mckinney2011pandas}\\
 
 
 \textbf{Requests} es una biblioteca de Python que permite realizar solicitudes HTTP de forma sencilla.
 Es utilizada para acceder a APIs y extraer datos de bases de datos en línea, como HPO o StringDB, permitiendo automatizar la obtención de datos relevantes para el estudio de fenotipos y genes.
-Fue desarrollada por Kenneth Reitz y es una de las bibliotecas más populares para trabajar con APIs en Python.\\
+Fue desarrollada por Kenneth Reitz y es una de las bibliotecas más populares para trabajar con APIs en Python.\cite{chandra2015python}\\
 
 
 \textbf{Networkx} es una biblioteca en Python para la creación, manipulación y análisis de redes complejas.
 Se utiliza para modelar y analizar redes de interacciones genéticas o de proteínas. Por ejemplo, en el análisis de datos de StringDB, networkx permite estudiar las relaciones entre proteínas de forma visual y cuantitativa.
-Es una biblioteca de código abierto mantenida por la comunidad, utilizada ampliamente en estudios de redes biológicas y sociales.\\
+Es una biblioteca de código abierto mantenida por la comunidad, utilizada ampliamente en estudios de redes biológicas y sociales.\cite{hagberg2020networkx}\\
 
 
 \textbf{Matplotlib.pyplot} es una biblioteca de Python que permite crear gráficos y visualizaciones de datos de forma detallada y personalizada.
 Lo utilizamos para representar datos biológicos y resultados de análisis de manera visual, lo cual facilita la interpretación de datos complejos, como los patrones de interacción entre proteínas o genes relacionados con un fenotipo específico.
-Fue desarrollada por John D. Hunter y es mantenida por la comunidad científica y de datos.
+Fue desarrollada por John D. Hunter y es mantenida por la comunidad científica y de datos.\cite{ari2014matplotlib}
 
 
 

@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{16}
+\begin{thebibliography}{26}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -238,6 +238,140 @@ doi:\doiurl{10.18632/oncotarget.5783}
 \end{botherref}
 \endbibitem
 
+%%% 17
+\bibitem{jimenez2019introduccion}
+\begin{botherref}
+\oauthor{\bsnm{Jiménez}, \binits{J.U.}}:
+Introducción a r y rstudio
+(2019)
+\end{botherref}
+\endbibitem
+
+%%% 18
+\bibitem{Python_Teams}
+\begin{botherref}
+\oauthor{\bsnm{Teams}, \binits{P.}}:
+What is Python? Executive Summary
+(2023)
+\end{botherref}
+\endbibitem
+
+%%% 19
+\bibitem{kohler2014human}
+\begin{barticle}
+\bauthor{\bsnm{K{\"o}hler}, \binits{S.}},
+\bauthor{\bsnm{Doelken}, \binits{S.C.}},
+\bauthor{\bsnm{Mungall}, \binits{C.J.}},
+\bauthor{\bsnm{Bauer}, \binits{S.}},
+\bauthor{\bsnm{Firth}, \binits{H.V.}},
+\bauthor{\bsnm{Bailleul-Forestier}, \binits{I.}},
+\bauthor{\bsnm{Black}, \binits{G.C.}},
+\bauthor{\bsnm{Brown}, \binits{D.L.}},
+\bauthor{\bsnm{Brudno}, \binits{M.}},
+\bauthor{\bsnm{Campbell}, \binits{J.}}, \betal:
+\batitle{The human phenotype ontology project: linking molecular biology and
+  disease through phenotype data}.
+\bjtitle{Nucleic acids research}
+\bvolume{42}(\bissue{D1}),
+\bfpage{966}--\blpage{974}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem{szklarczyk2015string}
+\begin{barticle}
+\bauthor{\bsnm{Szklarczyk}, \binits{D.}},
+\bauthor{\bsnm{Franceschini}, \binits{A.}},
+\bauthor{\bsnm{Wyder}, \binits{S.}},
+\bauthor{\bsnm{Forslund}, \binits{K.}},
+\bauthor{\bsnm{Heller}, \binits{D.}},
+\bauthor{\bsnm{Huerta-Cepas}, \binits{J.}},
+\bauthor{\bsnm{Simonovic}, \binits{M.}},
+\bauthor{\bsnm{Roth}, \binits{A.}},
+\bauthor{\bsnm{Santos}, \binits{A.}},
+\bauthor{\bsnm{Tsafou}, \binits{K.P.}}, \betal:
+\batitle{String v10: protein--protein interaction networks, integrated over the
+  tree of life}.
+\bjtitle{Nucleic acids research}
+\bvolume{43}(\bissue{D1}),
+\bfpage{447}--\blpage{452}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem{jenuth1999ncbi}
+\begin{botherref}
+\oauthor{\bsnm{Jenuth}, \binits{J.P.}}:
+The ncbi: Publicly available tools and resources on the web.
+Bioinformatics methods and protocols,
+301--312
+(1999)
+\end{botherref}
+\endbibitem
+
+%%% 22
+\bibitem{valdez2016analisis}
+\begin{barticle}
+\bauthor{\bsnm{Valdez}, \binits{B.}}:
+\batitle{An{\'a}lisis de grafos usando r e igraph}.
+\bjtitle{altamira}
+\bvolume{1}(\bissue{1}),
+\bfpage{1}
+(\byear{2016})
+\end{barticle}
+\endbibitem
+
+%%% 23
+\bibitem{mckinney2011pandas}
+\begin{barticle}
+\bauthor{\bsnm{McKinney}, \binits{W.}}, \betal:
+\batitle{pandas: a foundational python library for data analysis and
+  statistics}.
+\bjtitle{Python for high performance and scientific computing}
+\bvolume{14}(\bissue{9}),
+\bfpage{1}--\blpage{9}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem{chandra2015python}
+\begin{bbook}
+\bauthor{\bsnm{Chandra}, \binits{R.V.}},
+\bauthor{\bsnm{Varanasi}, \binits{B.S.}}:
+\bbtitle{Python Requests Essentials}.
+\bpublisher{Packt Publishing Birmingham, UK}, \blocation{???}
+(\byear{2015})
+\end{bbook}
+\endbibitem
+
+%%% 25
+\bibitem{hagberg2020networkx}
+\begin{botherref}
+\oauthor{\bsnm{Hagberg}, \binits{A.}},
+\oauthor{\bsnm{Conway}, \binits{D.}}:
+Networkx: Network analysis with python.
+URL: https://networkx. github. io
+(2020)
+\end{botherref}
+\endbibitem
+
+%%% 26
+\bibitem{ari2014matplotlib}
+\begin{bchapter}
+\bauthor{\bsnm{Ari}, \binits{N.}},
+\bauthor{\bsnm{Ustazhanov}, \binits{M.}}:
+\bctitle{Matplotlib in python}.
+In: \bbtitle{2014 11th International Conference on Electronics, Computer and
+  Computation (ICECCO)},
+pp. \bfpage{1}--\blpage{6}
+(\byear{2014}).
+\bcomment{IEEE}
+\end{bchapter}
+\endbibitem
+
 \end{thebibliography}
 
 \newcommand{\BMCxmlcomment}[1]{}
@@ -432,6 +566,147 @@ doi:\doiurl{10.18632/oncotarget.5783}
   <source>Oncotarget</source>
   <pubdate>2015</pubdate>
   <volume>6</volume>
+</bibl>
+
+<bibl id="B17">
+  <title><p>Introducción a R y RStudio</p></title>
+  <aug>
+    <au><snm>Jiménez</snm><fnm>JU</fnm></au>
+  </aug>
+  <pubdate>2019</pubdate>
+</bibl>
+
+<bibl id="B18">
+  <title><p>What is Python? Executive Summary</p></title>
+  <aug>
+    <au><snm>Teams</snm><fnm>P</fnm></au>
+  </aug>
+  <source>Https://Www.Python.Org/Doc/Essays/Blurb/</source>
+  <pubdate>2023</pubdate>
+</bibl>
+
+<bibl id="B19">
+  <title><p>The Human Phenotype Ontology project: linking molecular biology and
+  disease through phenotype data</p></title>
+  <aug>
+    <au><snm>K{\"o}hler</snm><fnm>S</fnm></au>
+    <au><snm>Doelken</snm><fnm>SC</fnm></au>
+    <au><snm>Mungall</snm><fnm>CJ</fnm></au>
+    <au><snm>Bauer</snm><fnm>S</fnm></au>
+    <au><snm>Firth</snm><fnm>HV</fnm></au>
+    <au><snm>Bailleul Forestier</snm><fnm>I</fnm></au>
+    <au><snm>Black</snm><fnm>GC</fnm></au>
+    <au><snm>Brown</snm><fnm>DL</fnm></au>
+    <au><snm>Brudno</snm><fnm>M</fnm></au>
+    <au><snm>Campbell</snm><fnm>J</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Nucleic acids research</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2014</pubdate>
+  <volume>42</volume>
+  <issue>D1</issue>
+  <fpage>D966</fpage>
+  <lpage>-D974</lpage>
+</bibl>
+
+<bibl id="B20">
+  <title><p>STRING v10: protein--protein interaction networks, integrated over
+  the tree of life</p></title>
+  <aug>
+    <au><snm>Szklarczyk</snm><fnm>D</fnm></au>
+    <au><snm>Franceschini</snm><fnm>A</fnm></au>
+    <au><snm>Wyder</snm><fnm>S</fnm></au>
+    <au><snm>Forslund</snm><fnm>K</fnm></au>
+    <au><snm>Heller</snm><fnm>D</fnm></au>
+    <au><snm>Huerta Cepas</snm><fnm>J</fnm></au>
+    <au><snm>Simonovic</snm><fnm>M</fnm></au>
+    <au><snm>Roth</snm><fnm>A</fnm></au>
+    <au><snm>Santos</snm><fnm>A</fnm></au>
+    <au><snm>Tsafou</snm><fnm>KP</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Nucleic acids research</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2015</pubdate>
+  <volume>43</volume>
+  <issue>D1</issue>
+  <fpage>D447</fpage>
+  <lpage>-D452</lpage>
+</bibl>
+
+<bibl id="B21">
+  <title><p>The NCBI: Publicly available tools and resources on the
+  web</p></title>
+  <aug>
+    <au><snm>Jenuth</snm><fnm>JP</fnm></au>
+  </aug>
+  <source>Bioinformatics methods and protocols</source>
+  <publisher>Springer</publisher>
+  <pubdate>1999</pubdate>
+  <fpage>301</fpage>
+  <lpage>-312</lpage>
+</bibl>
+
+<bibl id="B22">
+  <title><p>An{\'a}lisis de grafos usando R e igraph</p></title>
+  <aug>
+    <au><snm>Valdez</snm><fnm>B</fnm></au>
+  </aug>
+  <source>altamira</source>
+  <pubdate>2016</pubdate>
+  <volume>1</volume>
+  <issue>1</issue>
+  <fpage>1</fpage>
+</bibl>
+
+<bibl id="B23">
+  <title><p>pandas: a foundational Python library for data analysis and
+  statistics</p></title>
+  <aug>
+    <au><snm>McKinney</snm><fnm>W</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Python for high performance and scientific computing</source>
+  <publisher>Seattle</publisher>
+  <pubdate>2011</pubdate>
+  <volume>14</volume>
+  <issue>9</issue>
+  <fpage>1</fpage>
+  <lpage>-9</lpage>
+</bibl>
+
+<bibl id="B24">
+  <title><p>Python requests essentials</p></title>
+  <aug>
+    <au><snm>Chandra</snm><fnm>RV</fnm></au>
+    <au><snm>Varanasi</snm><fnm>BS</fnm></au>
+  </aug>
+  <publisher>Packt Publishing Birmingham, UK</publisher>
+  <pubdate>2015</pubdate>
+</bibl>
+
+<bibl id="B25">
+  <title><p>Networkx: Network analysis with python</p></title>
+  <aug>
+    <au><snm>Hagberg</snm><fnm>A</fnm></au>
+    <au><snm>Conway</snm><fnm>D</fnm></au>
+  </aug>
+  <source>URL: https://networkx. github. io</source>
+  <pubdate>2020</pubdate>
+</bibl>
+
+<bibl id="B26">
+  <title><p>Matplotlib in python</p></title>
+  <aug>
+    <au><snm>Ari</snm><fnm>N</fnm></au>
+    <au><snm>Ustazhanov</snm><fnm>M</fnm></au>
+  </aug>
+  <source>2014 11th International Conference on Electronics, Computer and
+  Computation (ICECCO)</source>
+  <pubdate>2014</pubdate>
+  <fpage>1</fpage>
+  <lpage>-6</lpage>
 </bibl>
 
 </refgrp>
