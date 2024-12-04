@@ -43,91 +43,11 @@ def fetch_interactions(protein_names, species=9606, score_threshold=0.5):
     else:
         print(f"Error al conectar con STRINGdb: {response.status_code}")
         exit(1)
+        
+ 
+        
+ 
 
-
-
-    """
-    Descarga la red de interacciones como una imagen desde la API de STRING y la guarda como archivo.
-
-    Args:
-        protein_names (list): Lista de nombres de proteínas.
-        output_image (str): Nombre del archivo para guardar la imagen.
-    """
-    if not protein_names:
-        print("La lista de nombres de proteínas está vacía. No se puede generar la imagen.")
-        return
-
-    # Codificar los nombres de las proteínas
-    encoded_proteins = urllib.parse.quote_plus("%0d".join(protein_names))
-
-    # Construir la URL de la API
-    base_url = 'https://string-db.org/api/image/'
-    url_request = (
-        f"{base_url}network?identifiers={encoded_proteins}"
-        f"&required_score=70&add_nodes=10&network_type=physical"
-    )
-    print(f"Solicitando la imagen desde: {url_request}")
-
-    # Hacer la solicitud a la API
-    response = requests.get(url_request, stream=True)
-
-    # Verificar el código de estado
-    if response.status_code == 200:
-        # Guardar la imagen en el archivo especificado
-        try:
-            with open(output_image, 'wb') as out_file:
-                shutil.copyfileobj(response.raw, out_file)
-            print(f"La imagen de la red de interacciones se ha guardado como '{output_image}'.")
-        except Exception as e:
-            print(f"Error al guardar la imagen: {e}")
-    elif response.status_code == 400:
-        print("Error 400: La solicitud a la API está malformada. Verifica los nombres de las proteínas y los parámetros.")
-    else:
-        print(f"Error al descargar la imagen de la API: {response.status_code} ({response.reason})")
-    """
-    Descarga la red de interacciones como una imagen desde la API de STRING y la guarda como archivo.
-
-    Args:
-        protein_names (list): Lista de nombres de proteínas.
-        output_image (str): Nombre del archivo para guardar la imagen.
-    """
-    if not protein_names:
-        print("La lista de nombres de proteínas está vacía. No se puede generar la imagen.")
-        return
-
-    # Construir la URL de la API
-    base_url = 'https://string-db.org/api/image/'
-    url_request = (
-        f"{base_url}network?identifiers={'%0d'.join(protein_names)}"
-        f"&required_score=70&add_nodes=10&network_type=physical"
-    )
-    print(f"Solicitando la imagen desde: {url_request}")
-
-    # Hacer la solicitud a la API
-    response = requests.get(url_request, stream=True)
-
-    # Verificar el código de estado
-    if response.status_code != 200:
-        print(f"Error al descargar la imagen de la API: {response.status_code}")
-        return
-
-    # Verificar que el contenido sea una imagen
-    if response.headers.get('Content-Type') != 'image/png':
-        print("La API no devolvió una imagen válida.")
-        return
-
-    # Asegurarse de que el directorio del archivo existe
-    output_dir = os.path.dirname(output_image)
-    if output_dir and not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
-    # Guardar la imagen en el archivo especificado
-    try:
-        with open(output_image, 'wb') as out_file:
-            shutil.copyfileobj(response.raw, out_file)
-        print(f"La imagen de la red de interacciones se ha guardado como '{output_image}'.")
-    except Exception as e:
-        print(f"Error al guardar la imagen: {e}")
 def fetch_and_show_graph(protein_names, species=9606, score_threshold=0.5):
     """
     Obtiene y muestra el grafo desde STRINGdb en formato de imagen.
@@ -161,6 +81,7 @@ def fetch_and_show_graph(protein_names, species=9606, score_threshold=0.5):
 
 
 
+
 if __name__ == "__main__":
     # Configurar los argumentos de línea de comandos
     parser = argparse.ArgumentParser(description="Obtener interacciones de proteínas utilizando STRINGdb.")
@@ -184,11 +105,12 @@ if __name__ == "__main__":
     # Extraer los nombres de las proteínas
     protein_names = [protein["name"] for protein in proteins]
     print(f"Proteínas encontradas: {protein_names}") if args.verbose else None
-
+    
     # Obtener las interacciones
     print(f"Obteniendo interacciones con score >= {args.score_threshold}...") if args.verbose else None
     interaction_network = fetch_interactions(protein_names, score_threshold=args.score_threshold)
-
+    
+    
     # Guardar la red de interacciones en un archivo CSV
     if not interaction_network.empty:
         interaction_network.to_csv(args.output_file, index=False)
@@ -196,7 +118,6 @@ if __name__ == "__main__":
 
         # Generar y guardar la imagen de la red
         fetch_and_show_graph(protein_names)
-        print(f"Imagen guardada en: {args.output_file}")
 
         # Dibujar el grafo de interacciones
     else:
