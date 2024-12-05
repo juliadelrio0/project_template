@@ -22,31 +22,36 @@ num_edges <- gsize(g)   # Número de aristas
 degree_values <- degree(g)  # Grado de los nodos
 average_degree <- mean(degree_values)  # Promedio de grado
 network_density <- edge_density(g)  # Densidad de la red
-centrality_closeness <- closeness(g)  # Centralidad de cercanía
+dispersion <- 1 - network_density  # Dispersión de la red
+avg_path_length <- mean_distance(g)  # Longitud promedio de caminos
+vertex_connectivity <- vertex_connectivity(g)  # Conectividad de nodos
+edge_connectivity <- edge_connectivity(g)  # Conectividad de aristas
+
+# Centralidad de cercanía
+centrality_closeness <- closeness(g)
 
 # Centralidad de autovector
-eigenvector_values <- eigen_centrality(g)$vector  # Usando eigen_centrality
+eigenvector_values <- eigen_centrality(g)$vector
 
 # Coeficiente de agrupamiento
 clustering_values <- transitivity(g, type = "local")
 
 # Centralidad de intermediación
-betweenness_values <- betweenness(g)  # Centralidad de intermediación
+betweenness_values <- betweenness(g)
 
 # Crear un contador de calidad
-quality_counter <- list()  # Diccionario para contar las veces que cada gen aparece en las mejores métricas
+quality_counter <- list()
 
-# Función para obtener los top 5 nodos basados en los valores de las métricas
+# Función para obtener los top 5 valores y nodos
 get_top_5_values <- function(metric_values) {
   sorted_values <- sort(metric_values, decreasing = TRUE)  # Ordenar de mayor a menor
-  top_5_values <- sorted_values[1:5]  # Obtener los 5 primeros valores
+  top_5_values <- sorted_values[1:5]
   return(top_5_values)
 }
 
-# Función para obtener los nodos correspondientes a los top 5 valores
 get_top_5_nodes <- function(metric_values) {
-  sorted_values <- sort(metric_values, decreasing = TRUE)  # Ordenar de mayor a menor
-  top_5_nodes <- names(sorted_values[1:5])  # Obtener los 5 primeros nodos
+  sorted_values <- sort(metric_values, decreasing = TRUE)
+  top_5_nodes <- names(sorted_values[1:5])
   return(top_5_nodes)
 }
 
@@ -63,7 +68,7 @@ top_eigenvector_nodes <- get_top_5_nodes(eigenvector_values)
 top_clustering_values <- get_top_5_values(clustering_values)
 top_clustering_nodes <- get_top_5_nodes(clustering_values)
 
-# Función para actualizar el contador de calidad
+# Actualizar el contador de calidad
 update_quality_counter <- function(nodes, counter) {
   for (node in nodes) {
     if (node %in% names(counter)) {
@@ -75,38 +80,34 @@ update_quality_counter <- function(nodes, counter) {
   return(counter)
 }
 
-# Actualizar el contador de calidad con los top nodos
 quality_counter <- update_quality_counter(top_degree_nodes, quality_counter)
 quality_counter <- update_quality_counter(top_betweenness_nodes, quality_counter)
 quality_counter <- update_quality_counter(top_eigenvector_nodes, quality_counter)
 quality_counter <- update_quality_counter(top_clustering_nodes, quality_counter)
 
-# Diámetro de la red
-network_diameter <- diameter(g)
-
-# Asortatividad
-assortativity_value <- assortativity(g, values = degree_values, directed = FALSE)
-
-# Guardar las métricas en un archivo de texto (sin nombres de genes, solo los valores)
+# Guardar las métricas en un archivo de texto
 cat("Número de nodos:", num_nodes, "\n", file = metrics_file)
 cat("Número de aristas:", num_edges, "\n", file = metrics_file, append = TRUE)
 cat("Promedio de grado:", average_degree, "\n", file = metrics_file, append = TRUE)
 cat("Densidad de la red:", network_density, "\n", file = metrics_file, append = TRUE)
+cat("Dispersión de la red:", dispersion, "\n", file = metrics_file, append = TRUE)
+cat("Longitud promedio de caminos:", avg_path_length, "\n", file = metrics_file, append = TRUE)
+cat("Conectividad de nodos:", vertex_connectivity, "\n", file = metrics_file, append = TRUE)
+cat("Conectividad de aristas:", edge_connectivity, "\n", file = metrics_file, append = TRUE)
 
-# Añadir valores de las métricas para los primeros 5 nodos
-cat("Centralidad de cercanía (primeros 5 nodos):", paste(top_degree_values, collapse = " "), "\n", file = metrics_file, append = TRUE)
-cat("Centralidad de autovector (primeros 5 nodos):", paste(top_eigenvector_values, collapse = " "), "\n", file = metrics_file, append = TRUE)
-cat("Coeficiente de agrupamiento (primeros 5 nodos):", paste(top_clustering_values, collapse = " "), "\n", file = metrics_file, append = TRUE)
-cat("Centralidad de intermediación (primeros 5 nodos):", paste(top_betweenness_values, collapse = " "), "\n", file = metrics_file, append = TRUE)
-cat("Diámetro de la red:", network_diameter, "\n", file = metrics_file, append = TRUE)
-cat("Asortatividad:", assortativity_value, "\n", file = metrics_file, append = TRUE)
+# Guardar los top 5 valores para métricas seleccionadas
+cat("Centralidad de cercanía (primeros 5 valores):", paste(get_top_5_values(centrality_closeness), collapse = " "), "\n", file = metrics_file, append = TRUE)
+cat("Centralidad de autovector (primeros 5 valores):", paste(top_eigenvector_values, collapse = " "), "\n", file = metrics_file, append = TRUE)
+cat("Coeficiente de agrupamiento (primeros 5 valores):", paste(top_clustering_values, collapse = " "), "\n", file = metrics_file, append = TRUE)
+cat("Centralidad de intermediación (primeros 5 valores):", paste(top_betweenness_values, collapse = " "), "\n", file = metrics_file, append = TRUE)
 
-# Estudio de la distribución del grado
-png(file = paste0(plot_directory, "/degree_distribution.png"))
-hist(degree_values, breaks = 30, col = "lightblue", main = "Distribución del Grado", xlab = "Grado", ylab = "Frecuencia")
-dev.off()
+# Ordenar los genes por calidad y guardar los mejores 5
+top_quality_genes <- names(sort(unlist(quality_counter), decreasing = TRUE)[1:5])
 
-# Crear los gráficos
+cat("Top genes por calidad potencial:\n", file = top_nodes_file)
+cat(top_quality_genes, sep = "\n", file = top_nodes_file, append = TRUE)
+
+# Crear las representaciones gráficas
 # Gráfico básico
 png(file = paste0(plot_directory, "/basic_network.png"))
 plot(g, vertex.size = 5, vertex.label.cex = 0.7, edge.arrow.size = 0.5, main = "Red de Interacciones Básica")
@@ -134,12 +135,6 @@ png(file = paste0(plot_directory, "/no_labels.png"))
 plot(g, vertex.color = "orange", vertex.size = 5, vertex.label = NA, edge.width = 0.5, main = "Red sin Etiquetas")
 dev.off()
 
-# Ordenar los genes por calidad y seleccionar los 5 mejores
-top_quality_genes <- names(sort(unlist(quality_counter), decreasing = TRUE)[1:5])
-
-# Guardar los nodos destacados en un archivo de texto
-cat("Top genes por calidad potencial:\n", file = top_nodes_file)
-cat(top_quality_genes, sep = "\n", file = top_nodes_file, append = TRUE)
-
 cat("Gráficas generadas en el directorio de imágenes.\n")
+
 
