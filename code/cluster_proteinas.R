@@ -1,5 +1,6 @@
 # Cargar las bibliotecas necesarias
 library(igraph)
+library(optparse)
 
 # Función para calcular la modularidad de un clustering
 calculate_modularity <- function(graph, communities) {
@@ -17,19 +18,36 @@ save_dendrogram_plot <- function(graph, clustering, filename) {
   dev.off()
 }
 
-# Función para generar la visualización con clusters coloreados
+# Función para generar la visualización con clusters coloreados y una leyenda
 save_colored_clusters_plot <- function(graph, clusters, filename) {
   # Asignar colores a los clusters
-  V(graph)$color <- rainbow(length(unique(clusters)))[clusters]
+  unique_clusters <- unique(clusters)
+  cluster_colors <- rainbow(length(unique_clusters))
+  V(graph)$color <- cluster_colors[clusters]
   
   # Guardar la visualización con clusters coloreados
   png(filename)
-  plot(graph, vertex.size = 5, vertex.label = NA, main = "Visualización con clusters coloreados")
+  plot(
+    graph, 
+    vertex.size = 5, 
+    vertex.label = NA, 
+    main = "Visualización con clusters coloreados"
+  )
+  legend(
+    "topright", 
+    legend = paste("Cluster", unique_clusters), 
+    col = cluster_colors, 
+    pch = 20, 
+    bty = "n", 
+    cex = 0.8
+  )
   dev.off()
 }
 
-# Función principal que recibe el archivo CSV como argumento
-main <- function(input_file, output_dir) {
+# Función principal que recibe los directorios y el archivo CSV como argumento
+main <- function(input_file, dirimg, dirgenclus, dirres) {
+  set.seed(42)  # Establecer una semilla para garantizar la reproducibilidad
+  
   # Leer el archivo CSV
   interactions <- read.csv(input_file, header = TRUE)
   
@@ -73,33 +91,28 @@ main <- function(input_file, output_dir) {
   # Encontrar el mejor clustering basado en la modularidad
   best_algorithm <- names(which.max(sapply(results, function(x) x$modularity)))
   
-  # Crear directorios para guardar las imágenes
-  dir.create(file.path(output_dir, "figures"), showWarnings = FALSE)
+  # Crear directorios para guardar las imágenes y archivos de genes
+  dir.create(file.path(dirimg), showWarnings = FALSE)
+  dir.create(file.path(dirgenclus), showWarnings = FALSE)
   
   # Guardar tres visualizaciones diferentes del grafo
   best_clustering <- clustering_graphs[[best_algorithm]]
   clusters <- membership(best_clustering)
   
   # Sustituir la visualización básica por un dendograma con el mejor algoritmo
-  save_dendrogram_plot(graph, best_clustering, file.path(output_dir, "figures", paste0("dendrogram_", best_algorithm, ".png")))
+  save_dendrogram_plot(graph, best_clustering, file.path(dirimg, paste0("dendrogram_", best_algorithm, ".png")))
   
   # Guardar otras visualizaciones
-  save_colored_clusters_plot(graph, clusters, file.path(output_dir, "figures", paste0("colored_", best_algorithm, ".png")))
+  save_colored_clusters_plot(graph, clusters, file.path(dirimg, paste0("colored_", best_algorithm, ".png")))
   
-  # Crear la tabla de genes y clusters para el mejor algoritmo
-  gene_names <- unique(c(interactions[, 1], interactions[, 2]))  # Acceder a las primeras dos columnas
-  
-  # Asegúrate de que el número de genes y clusters coincida
-  if (length(gene_names) == length(clusters)) {
-    cluster_table <- data.frame(Gene = gene_names, Cluster = clusters)
-    # Guardar la tabla de genes y clusters en un archivo separado
-    write.table(cluster_table, file = file.path(output_dir, "genes_clusters.txt"), row.names = FALSE, sep = "\t", quote = FALSE)
-  } else {
-    cat("El número de genes y clusters no coincide, revisa los datos.\n")
+  # Guardar los genes de cada cluster en archivos separados
+  for (i in unique(clusters)) {
+    cluster_genes <- names(clusters[clusters == i])
+    write.table(cluster_genes, file = file.path(dirgenclus, paste0("cluster_", i, ".txt")), row.names = FALSE, col.names = FALSE, quote = FALSE)
   }
   
   # Guardar los resultados de las clusterizaciones en un archivo separado
-  sink(file.path(output_dir, "clusters_info.txt"), append = TRUE)
+  sink(file.path(dirres, "clusters_info.txt"), append = TRUE)
   cat("\nMejor algoritmo de clustering:", best_algorithm, "\n")
   
   for (algorithm in names(results)) {
@@ -115,8 +128,16 @@ main <- function(input_file, output_dir) {
   sink()  # Finaliza la escritura en el archivo
 }
 
-# Llamar a la función principal con el directorio de salida como argumento
-args <- commandArgs(trailingOnly = TRUE)
-input_file <- args[1]
-output_dir <- args[2]
-main(input_file, output_dir)
+# Configuración de argumentos con optparse
+option_list <- list(
+  make_option(c("-r", "--red"), type = "character", help = "Archivo CSV con la red de interacción de proteínas"),
+  make_option(c("-d", "--dirimg"), type = "character", help = "Directorio para guardar las imágenes generadas"),
+  make_option(c("-g", "--dirgenclus"), type = "character", help = "Directorio para guardar los archivos con los genes por cluster"),
+  make_option(c("-s", "--dirres"), type = "character", help = "Directorio para guardar el resumen de las clusterizaciones")
+)
+
+opt_parser <- OptionParser(option_list = option_list)
+opt <- parse_args(opt_parser)
+
+# Llamar a la función principal con los directorios y archivo de entrada como argumentos
+main(opt$red, opt$dirimg, opt$dirgenclus, opt$dirres)
