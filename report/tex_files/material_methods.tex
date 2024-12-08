@@ -3,17 +3,26 @@
 
 \subsection{\textbf{Materiales}}
 
-\subsubsection{Programas}
- 
 
-\textbf{R} es un lenguaje de programación y un entorno estadístico muy utilizado en bioinformática, análisis de datos y ciencia de datos.
-Sirve para realizar análisis estadísticos complejos, visualización de datos y manipulación de datos biológicos, como análisis de expresión genética para lo que lo estamos utilizando en este caso.
-Fue desarrollado por Robert Gentleman y Ross Ihaka en la Universidad de Auckland, Nueva Zelanda, y es un proyecto de código abierto mantenido por la comunidad R.\cite{jimenez2019introduccion}\\
+\subsubsection{\textbf{Programas}}
 
 
-\textbf{Python} es un lenguaje de programación, conocido por su simplicidad, versatilidad y eficiencia a la hora de programar.
-Se utiliza en análisis de datos, desarrollo de modelos, análisis bioinformático, y en el manejo y procesamiento de grandes volúmenes de datos biológicos.
-Fue creado por Guido van Rossum y ha crecido hasta convertirse en uno de los lenguajes más populares, con una comunidad activa que proporciona múltiples herramientas y bibliotecas.\cite{Python_Teams}
+\textbf{R} es un lenguaje de programación y un entorno estadístico ampliamente utilizado en bioinformática, análisis de datos y ciencia de datos. Sirve para realizar análisis estadísticos complejos, visualización de datos y manipulación de datos biológicos, como el análisis de expresión genética, que resulta relevante en este estudio. Fue desarrollado por Robert Gentleman y Ross Ihaka en la Universidad de Auckland, Nueva Zelanda, y es un proyecto de código abierto mantenido por la comunidad R \cite{jimenez2019introduccion}.
+
+
+En este trabajo, se utilizó la versión 4.4.2 de R, que incluye mejoras recientes en rendimiento y funcionalidad. R ha logrado un lugar destacado en bioinformática y ciencia de datos gracias a su flexibilidad y extensibilidad, permitiendo abordar desde análisis de datos genómicos hasta visualización de redes biológicas complejas. Esto se ha reflejado en su amplia adopción y en la disponibilidad de paquetes especializados que simplifican tareas como el análisis de secuencias, la estadística avanzada y la integración de múltiples tipos de datos biológicos \cite{Giorgi2022}. 
+
+
+En este proyecto, R se empleó como una herramienta integral para el análisis de redes y la representación funcional de datos genómicos, haciendo uso de técnicas computacionales modernas y métodos estadísticos reproducibles. Su capacidad para integrar datos biológicos complejos lo convierte en un recurso invaluable en investigaciones bioinformáticas actuales \cite{RLanguaje}.
+
+
+
+
+\textbf{Python} es un lenguaje de programación ampliamente utilizado en bioinformática y análisis de datos biológicos debido a su simplicidad y versatilidad. Es especialmente útil para gestionar y analizar grandes volúmenes de datos genómicos, así como para automatizar flujos de trabajo. En este estudio, se empleó Python para interactuar con bases de datos biológicas y obtener información sobre genes y sus interacciones proteicas, utilizando su capacidad para integrar diferentes tecnologías y bibliotecas.
+
+La versión 3.12.0 de Python se utilizó en este proyecto, aprovechando las mejoras en rendimiento y manejo de memoria, lo que resulta esencial cuando se trabajan con grandes cantidades de datos. Este lenguaje ha demostrado ser clave en estudios similares, donde se utiliza para realizar análisis de redes proteicas y facilitar la reproducibilidad de los resultados científicos \cite{Python_Teams}.
+
+
 \subsubsection{Bases de Datos}
 
 
@@ -39,26 +48,38 @@ Fue fundado por los Institutos Nacionales de Salud (NIH) de Estados Unidos y es 
 \subsubsection{Bibliotecas}
 
 
+\paragraph{Bibliotecas en R}
+
+El análisis y la visualización de datos en este estudio se ha realizado utilizando varias bibliotecas de R, que proporcionan herramientas especializadas para el manejo de redes, análisis de genes y visualización de resultados. A continuación, se describen las principales bibliotecas utilizadas.
+
+\textbf{Igraph} (versión 2.1.2) es una biblioteca para el análisis y la visualización de redes complejas, desarrollada en múltiples lenguajes, incluyendo Python y R. En bioinformática, se utiliza para construir y analizar redes de interacciones biológicas, como redes de proteínas o genes, ayudando a visualizar cómo las proteínas relacionadas con un fenotipo específico pueden interactuar entre sí. Esta biblioteca es especialmente útil para el análisis de grafos de interacciones, permitiendo obtener métricas como la centralidad, coeficiente de agrupamiento y otros atributos topológicos de las redes. Fue desarrollada por una comunidad internacional de programadores y científicos\cite{valdez2016analisis} \cite{igraphref} \cite{igraphmanual}.
+
+\textbf{ClusterProfiler} (versión 4.14.4) es una biblioteca utilizada para realizar análisis de enriquecimiento funcional de genes. Esta herramienta permite identificar las rutas biológicas, funciones moleculares y procesos celulares que están significativamente representados en los conjuntos de genes estudiados. En este trabajo, se empleó para realizar el enriquecimiento de los genes asociados a interacciones de proteínas y a fenotipos específicos. \cite{clusterprofiler1} \cite{clusterprofiler2} \cite{clusterprofiler3} \cite{clusterprofiler4}.
+
+\textbf{Org.Hs.eg.db} (versión 3.20.0) proporciona una base de datos extensa con información sobre genes humanos, incluyendo símbolos de genes, identificadores de acceso, y asociaciones con términos GO, entre otras. Esta base de datos fue crucial para mapear los genes a los términos correspondientes en los análisis de enriquecimiento. \cite{org.Hs.eg.db_manual}
+
+\textbf{Enrichplot} (versión 1.26.3) se utilizó para la representación gráfica de los resultados de los análisis de enriquecimiento. Esta biblioteca facilita la creación de visualizaciones, como gráficos de barras, gráficos de puntos y diagramas de enriquecimiento, para facilitar la interpretación de los datos. \cite{enrichplotmanual}
+
+\textbf{Optparse} (versión 1.7.5) es una biblioteca que se utilizó para implementar interfaces de línea de comandos en los scripts de Python, permitiendo a los usuarios especificar parámetros de entrada y salida de manera flexible y eficiente.\cite{optparse}
+
+\textbf{GGplot2} (versión 3.5.1) es una biblioteca popular para la creación de gráficos en R. En este estudio, se utilizó para generar visualizaciones adicionales de los resultados de los análisis y facilitar la interpretación visual de las interacciones de proteínas y los enriquecimientos funcionales. \cite{ggplot2}
 
 
-\textbf{Igraph} es una biblioteca para el análisis y la visualización de redes complejas, desarrollada en múltiples lenguajes, incluyendo Python y R.
-En bioinformática, se usa para construir y analizar redes de interacciones biológicas, como redes de proteínas o genes, ayudando a visualizar cómo las proteínas relacionadas con un fenotipo específico pueden interactuar entre sí.
-Desarrollado por una comunidad internacional de programadores y científicos.\cite{valdez2016analisis}\\
-
+\paragraph{Bibliotecas en Python}
 
 \textbf{Pandas} es una biblioteca en Python que facilita la manipulación y el análisis de datos mediante estructuras de datos como DataFrames.
 En estudios bioinformáticos, pandas se utiliza para manejar y procesar grandes volúmenes de datos, como los obtenidos de bases de datos genéticas. Es útil para organizar los datos de HPO y facilitar su análisis.
-Fue creada por Wes McKinney y es ahora una biblioteca ampliamente adoptada en el ámbito de la ciencia de datos.\cite{mckinney2011pandas}\\
+Fue creada por Wes McKinney y es ahora una biblioteca ampliamente adoptada en el ámbito de la ciencia de datos.\cite{mckinney2011pandas}
 
 
 \textbf{Requests} es una biblioteca de Python que permite realizar solicitudes HTTP de forma sencilla.
 Es utilizada para acceder a APIs y extraer datos de bases de datos en línea, como HPO o StringDB, permitiendo automatizar la obtención de datos relevantes para el estudio de fenotipos y genes.
-Fue desarrollada por Kenneth Reitz y es una de las bibliotecas más populares para trabajar con APIs en Python.\cite{chandra2015python}\\
+Fue desarrollada por Kenneth Reitz y es una de las bibliotecas más populares para trabajar con APIs en Python.\cite{chandra2015python}
 
 
 \textbf{Networkx} es una biblioteca en Python para la creación, manipulación y análisis de redes complejas.
 Se utiliza para modelar y analizar redes de interacciones genéticas o de proteínas. Por ejemplo, en el análisis de datos de StringDB, networkx permite estudiar las relaciones entre proteínas de forma visual y cuantitativa.
-Es una biblioteca de código abierto mantenida por la comunidad, utilizada ampliamente en estudios de redes biológicas y sociales.\cite{hagberg2020networkx}\\
+Es una biblioteca de código abierto mantenida por la comunidad, utilizada ampliamente en estudios de redes biológicas y sociales.\cite{hagberg2020networkx}
 
 
 \textbf{Matplotlib.pyplot} es una biblioteca de Python que permite crear gráficos y visualizaciones de datos de forma detallada y personalizada.
