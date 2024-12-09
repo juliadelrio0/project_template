@@ -48,7 +48,7 @@ Fue fundado por los Institutos Nacionales de Salud (NIH) de Estados Unidos y es 
 \subsubsection{Bibliotecas}
 
 
-\paragraph{Bibliotecas en R}
+\paragraph{Bibliotecas en R} \mbox{}\\
 
 El análisis y la visualización de datos en este estudio se ha realizado utilizando varias bibliotecas de R, que proporcionan herramientas especializadas para el manejo de redes, análisis de genes y visualización de resultados. A continuación, se describen las principales bibliotecas utilizadas.
 
@@ -65,7 +65,7 @@ El análisis y la visualización de datos en este estudio se ha realizado utiliz
 \textbf{GGplot2} (versión 3.5.1) es una biblioteca popular para la creación de gráficos en R. En este estudio, se utilizó para generar visualizaciones adicionales de los resultados de los análisis y facilitar la interpretación visual de las interacciones de proteínas y los enriquecimientos funcionales. \cite{ggplot2}
 
 
-\paragraph{Bibliotecas en Python}
+\paragraph{Bibliotecas en Python} \mbox{}\\
 
 \textbf{Pandas} es una biblioteca en Python que facilita la manipulación y el análisis de datos mediante estructuras de datos como DataFrames.
 En estudios bioinformáticos, pandas se utiliza para manejar y procesar grandes volúmenes de datos, como los obtenidos de bases de datos genéticas. Es útil para organizar los datos de HPO y facilitar su análisis.
@@ -154,29 +154,19 @@ La integración de métricas, visualizaciones y análisis de comunidades permiti
 
 \subsubsection{Análisis de enriquecimiento funcional}
 
-El análisis de enriquecimiento funcional se llevó a cabo en R utilizando el script \textbf{\textit{functional\_analysis.R}}, desarrollado para identificar procesos biológicos sobrerrepresentados en los conjuntos de genes obtenidos en pasos previos. Este análisis se enfocó exclusivamente en términos de la ontología de procesos biológicos (GO-BP) y se realizó con la ayuda del paquete \textbf{\textit{clusterProfiler}}, junto con la base de datos de anotaciones \textbf{\textit{org.Hs.eg.db}}, que proporciona información detallada y actualizada sobre los genes humanos.
+El análisis de enriquecimiento funcional se llevó a cabo utilizando el enfoque \textbf{Over-Representation Analysis (ORA)}, que se basa en identificar términos funcionales significativamente sobrerrepresentados en un conjunto de genes en comparación con un fondo genómico de referencia. Este método fue implementado en R mediante el script \textbf{\textit{functional\_analysis.R}}, diseñado para procesar múltiples conjuntos de genes de forma automatizada. Se emplearon herramientas como \textbf{clusterProfiler} y \textbf{org.Hs.eg.db}, ampliamente reconocidas en bioinformática por su robustez y versatilidad en el análisis funcional.
 
-El script procesó archivos de texto que contenían listas de genes, organizados en un directorio de entrada especificado por el usuario. Cada archivo se trató como un conjunto independiente de genes a analizar. Los nombres de los genes se leyeron utilizando funciones estándar de R, y se eliminaron espacios en blanco para asegurar que los identificadores fueran válidos y consistentes con los registros de la base de datos. Este paso fue fundamental para garantizar la precisión y calidad de los resultados.
+El script fue configurado para trabajar con directorios de entrada y salida definidos por el usuario a través de argumentos en la línea de comandos. El directorio de entrada contenía archivos de texto con listas de genes que habían sido identificados y agrupados previamente. Cada archivo representaba un conjunto de genes independiente, lo que permitió evaluar términos funcionales específicos para cada comunidad detectada durante el análisis de la red. Los archivos de salida generados consistieron en gráficos en formato PNG que resumían los resultados obtenidos para cada conjunto analizado.
 
-Una vez preparados los datos, se aplicó la función \textit{enrichGO()} de \textit{clusterProfiler}. Esta función realiza un análisis de enriquecimiento para identificar términos de GO-BP asociados significativamente con los genes del conjunto. Los parámetros configurados incluyeron:
+En el primer paso del script, las listas de genes fueron leídas mediante la función \textit{readLines()} y procesadas con \textit{trimws()} para eliminar espacios en blanco, asegurando que los identificadores fueran válidos y consistentes con las bases de datos utilizadas. El formato de los genes como símbolos estándar (\textit{SYMBOL}) garantizó su compatibilidad con las bases de datos GO (Gene Ontology). Estos identificadores fueron utilizados directamente en la función \textit{enrichGO()} de clusterProfiler, la cual permitió realizar el análisis de enriquecimiento de procesos biológicos (GO-BP).
 
-\begin{itemize}
-	\item Tipo de clave: Se utilizó \textit{SYMBOL}, dado que los identificadores de los genes estaban en formato de símbolo estándar.
-	\item Base de datos: \textit{org.Hs.eg.db}, enfocada en genes humanos.
-	\item Ontología: Procesos biológicos (\textit{BP}).
-	\item Ajuste del p-valor: Método de Benjamini-Hochberg (\textit{pAdjustMethod = "BH"}) para controlar la tasa de falsos positivos.
-	\item Umbral de significancia: Un valor de \textit{p-value cutoff} de 0.05, para seleccionar solo los términos más relevantes.
-\end{itemize}
+El análisis ORA aplicado evaluó si los genes de cada conjunto estaban sobrerrepresentados en términos funcionales específicos de GO-BP. La configuración de \textit{enrichGO()} incluyó parámetros como el ajuste del p-valor mediante el método de Benjamini-Hochberg (BH), que controla la tasa de falsos positivos en análisis con múltiples pruebas. También se estableció un umbral de significancia de 0.05 para incluir únicamente los términos más relevantes. El análisis se basó en la comparación de los genes proporcionados frente a un fondo genómico estándar, permitiendo identificar términos enriquecidos que resaltan procesos biológicos clave, como la regulación del metabolismo energético y la dinámica mitocondrial, ambos directamente relacionados con el fenotipo HP:0008316.
 
-El análisis produjo resultados que incluían términos clave de GO-BP relacionados con funciones biológicas críticas, como el metabolismo energético, la regulación de procesos celulares y respuestas al estrés. Estos resultados ofrecieron una visión más profunda de las posibles funciones desempeñadas por los genes en el contexto del fenotipo estudiado.
+Los resultados del análisis se visualizaron mediante gráficos de puntos (dotplot) generados con las herramientas de visualización de clusterProfiler y \textbf{ggplot2}. En estos gráficos, cada punto representaba un término enriquecido de GO-BP, donde su tamaño indicaba el grado de enriquecimiento (proporción de genes asociados) y su posición en el eje reflejaba la significancia estadística. Los gráficos fueron guardados automáticamente en el directorio de salida especificado, con nombres que reflejaban el conjunto de genes analizado. Esto aseguró una organización clara y reproducible de los resultados.
 
-Para facilitar la interpretación de los resultados, el script generó gráficos de puntos (dotplot), donde cada punto representaba un término enriquecido de GO-BP. Los gráficos incluían el grado de enriquecimiento, indicado por el tamaño del punto; y la significancia estadística, representada en un eje de coordenadas.
+Se eligió ORA como el enfoque principal de enriquecimiento funcional debido a la naturaleza de nuestros datos, que consistían en listas específicas de genes agrupados. Otros enfoques, como GSEA o análisis basados en datos de expresión diferencial, no eran adecuados ya que no disponíamos de datos de expresión o variaciones genéticas asociadas al fenotipo. La decisión de emplear ORA estuvo respaldada por su capacidad para proporcionar información funcional relevante en contextos donde las listas de genes ya están definidas.
 
-Los gráficos se guardaron como archivos PNG en un directorio de salida especificado por el usuario. El nombre de cada archivo reflejaba el conjunto de genes procesado, asegurando una organización clara de los resultados.
-
-El script estaba diseñado para procesar múltiples archivos de genes de forma automática. Todos los archivos en el directorio de entrada se evaluaron iterativamente, generando un gráfico independiente para cada conjunto. Este enfoque automatizado redujo la necesidad de intervención manual, mejoró la reproducibilidad y permitió manejar grandes volúmenes de datos de manera eficiente.
-
-Este análisis proporcionó información clave sobre las funciones biológicas asociadas con los genes agrupados en clústeres, permitiendo identificar patrones funcionales relevantes para el fenotipo. Al combinar un enfoque estadístico robusto con visualizaciones claras, se logró una interpretación más completa y fundamentada de los datos biológicos.
+En resumen, el análisis ORA implementado mediante este script automatizado permitió identificar procesos biológicos y rutas funcionales clave asociados a los genes agrupados en clústeres, proporcionando una perspectiva funcional complementaria al análisis topológico de la red.
 
 
 
