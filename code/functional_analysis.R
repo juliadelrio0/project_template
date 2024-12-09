@@ -5,7 +5,6 @@ library(enrichplot)
 library(optparse)
 library(ggplot2)
 
-
 # Definir los argumentos de línea de comandos
 option_list <- list(
   make_option("--dir_i", type = "character", default = NULL, 
@@ -22,6 +21,12 @@ opt <- parse_args(opt_parser)
 if (is.null(opt$dir_i) | is.null(opt$dir_o)) {
   print("Debe proporcionar ambos directorios: --dir_i y --dir_o")
   quit(status = 1)
+}
+
+# Verificar si el directorio de salida existe, si no, crearlo
+if (!dir.exists(opt$dir_o)) {
+  dir.create(opt$dir_o, recursive = TRUE)
+  print(paste("Directorio creado:", opt$dir_o))
 }
 
 # Obtener la lista de archivos de genes en el directorio de entrada
@@ -51,6 +56,12 @@ run_enrichment <- function(gene_file, output_dir) {
   # Obtener el nombre del archivo sin extensión
   file_name <- tools::file_path_sans_ext(basename(gene_file))
   
+  # Verificar si el directorio de salida existe, si no, crearlo
+  if (!dir.exists(output_dir)) {
+    dir.create(output_dir, recursive = TRUE)
+    print(paste("Directorio creado:", output_dir))
+  }
+  
   # Guardar el gráfico como imagen PNG
   output_file <- file.path(output_dir, paste0("func_anal_res_", file_name, ".png"))
   ggsave(output_file, width = 10, height = 8)
@@ -62,3 +73,4 @@ run_enrichment <- function(gene_file, output_dir) {
 for (gene_file in gene_files) {
   run_enrichment(gene_file, opt$dir_o)
 }
+
