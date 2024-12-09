@@ -122,7 +122,13 @@ Finalmente, se evaluaron las comunidades detectadas mediante algoritmos de agrup
 
 \subsubsection{\textbf{Análisis de enriquecimiento funcional}}
 
+El análisis de enriquecimiento funcional se realizó en R utilizando el script \textit{functional\_analysis.R}, diseñado para identificar procesos biológicos sobrerrepresentados entre los genes obtenidos en los pasos previos. Este análisis se enfocó exclusivamente en términos de procesos biológicos (GO-BP) utilizando el paquete \textit{clusterProfiler} y la base de datos de anotaciones \textit{org.Hs.eg.db}, que ofrece información detallada sobre genes humanos.
 
+El script procesó archivos de texto que contenían listas de genes, organizados en un directorio de entrada especificado por el usuario. Para cada archivo, los genes se leyeron y limpiaron utilizando funciones de R, asegurando que los identificadores fueran válidos para el análisis. A partir de estos datos, se aplicó la función \textit{enrichGO()} de \textit{clusterProfiler}, configurada para trabajar con símbolos de genes humanos (SYMBOL) y para identificar procesos biológicos relevantes. Se empleó el método de ajuste del p-valor de Benjamini-Hochberg (BH) para controlar la tasa de falsos positivos, con un umbral de significancia de 0.05, asegurando la robustez de los resultados obtenidos.
+
+Cada conjunto de genes fue evaluado por su relación con términos de la ontología de procesos biológicos, generando resultados que incluyeron términos clave relacionados con el metabolismo energético y la regulación de procesos celulares. Para facilitar la interpretación, se generaron gráficos de puntos (dotplot) que representaban visualmente los términos enriquecidos junto con sus niveles de significancia. Estos gráficos se guardaron como archivos PNG en un directorio de salida definido por el usuario, garantizando una documentación clara y reproducible de los resultados.
+
+Con este script se automatizó el análisis para múltiples conjuntos de genes, procesando todos los archivos presentes en el directorio de entrada. Esto permitió una ejecución eficiente, reduciendo la intervención manual y asegurando la consistencia en el procesamiento de los datos.
 
 
 
