@@ -6,4 +6,39 @@ En el marco de este estudio, se obtuvieron inicialmente 48 genes asociados con e
 
 Al realizar el análisis de interacciones utilizando los identificadores de estos 48 genes, se observó que solo 38 genes interaccionaron entre sí dentro de la red generada. Este hallazgo sugiere que, aunque todos los genes descargados están asociados con el fenotipo mitocondrial, no todos ellos tienen interacciones directas en el contexto de las proteínas mitocondriales. En particular, algunos genes no mostraron evidencia de interacción directa con otros genes seleccionados, lo que podría indicar que sus roles en la biología mitocondrial pueden no depender de interacciones proteicas directas o que interactúan a través de mecanismos más complejos que no son reflejados en esta red.
 
+
 Uno de los genes más relevantes en este análisis es MYH7, que está relacionado con la miocardiopatía y es conocido por su papel en la función mitocondrial. Sin embargo, MYH7 no presentó interacciones con otros genes mitocondriales en esta red, lo que sugiere que su influencia en el fenotipo mitocondrial podría estar mediada por mecanismos independientes, tal vez a través de la regulación de procesos mitocondriales o por interacciones con otras proteínas no presentes en la red de interacciones utilizadas en este análisis.
+
+
+Para profundizar en el análisis de la red obtenida, se han aplicado diferentes algoritmos de clustering con el objetivo de identificar comunidades o grupos de proteínas que interactúen más estrechamente entre sí. Los algoritmos utilizados fueron: Fast Greedy, Edge Betweenness, Walktrap, Infomap y Label Propagation, y se evaluaron mediante la métrica de modularidad, que mide la calidad de las particiones realizadas.
+\vspace{1em}
+
+\begin{tabular}{|l|c|r|}
+	\hline
+	\textbf{Algoritmo} & \textbf{Modularidad} & \textbf{Número de Clusters} \\
+	\hline
+	Fast Greedy & 0.06917908 & 3 \\
+	\hline
+	Walktrap clustering & 0.02946764 & 9 \\
+	\hline
+	Edge Betweenness clustering & 0.01066141 & 1 \\
+	\hline
+	Infomap clustering & \(2.220446 \times 10^{-16}\) & 1 \\
+	\hline
+	Label\_Propagation clustering & \(2.220446 \times 10^{-16}\) & 1 \\
+	\hline
+\end{tabular}
+
+
+\vspace{1em}
+	
+
+Entre los algoritmos evaluados observamos que Fast Greedy, destacó como el algoritmo más efectivo, lo que indica que logra separar de forma significativa las diferentes comunidades.
+
+El algoritmo identificó tres clúster principales:
+
+- En el primer clúster podemos encontrar nodos como (NDUFS7, NDUFAF1, NDUFB10, NDUFS6, NDUFV2), este clúster reúne muchas proteínas de familia NDUF, fundamentales para la producción de energía en la célula. Entre estos elementos hay una alta conectividad.
+
+-El segundo clúster contiene como nodos más destacados (MT-CO1, MT-ATP6, MT-ND6, MT-ND5), este grupo parece estar más enfocado en la respiración celular y fosforilación oxidativa.
+
+-El tercer clúster, está representado por elementos menos conectados como por ejemplo: NDUFS2, TIMMDC1, NUBPL. Este clúster podría indicar que se están enfocando en procesos relacionados con la cadena de transporte de electrones.

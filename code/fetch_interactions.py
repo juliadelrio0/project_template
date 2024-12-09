@@ -37,7 +37,7 @@ def fetch_interactions(protein_names, species=9606, score_threshold=0.5):
         print(f"Error al conectar con STRINGdb: {response.status_code}")
         exit(1)
 
-def fetch_and_save_graph(protein_names, output_dir, species=9606, score_threshold=0.5):
+def fetch_and_save_graph(protein_names, output_dir, species=9606, score_threshold=0.9):
     """
     Descarga y guarda la imagen del grafo de interacciones desde STRINGdb.
 
