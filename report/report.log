@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.2)  9 DEC 2024 01:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.2)  9 DEC 2024 12:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -420,61 +420,9 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
 
 \address@aff1=\toks35
 (tex_files/introduction.tex
-
-LaTeX Warning: Citation `Spinelli2018' on page 1 undefined on input line 4.
-
-
-LaTeX Warning: Citation `Friedman2014' on page 1 undefined on input line 4.
-
-
-LaTeX Warning: Citation `Memme2021' on page 1 undefined on input line 4.
-
-
-LaTeX Warning: Citation `Smith2023' on page 1 undefined on input line 4.
-
-
-LaTeX Warning: Citation `QuintanaCabrera2023' on page 1 undefined on input line
- 4.
-
-
-LaTeX Warning: Citation `Chan2020' on page 1 undefined on input line 4.
-
-
-LaTeX Warning: Citation `Liu2017' on page 1 undefined on input line 4.
-
-
-LaTeX Warning: Citation `McConell2008' on page 1 undefined on input line 6.
-
-
-LaTeX Warning: Citation `Noone2022' on page 1 undefined on input line 6.
-
-
-LaTeX Warning: Citation `Hargreaves2020' on page 1 undefined on input line 6.
-
-
-LaTeX Warning: Citation `Egan2013' on page 1 undefined on input line 6.
-
-
-LaTeX Warning: Citation `Hood2019' on page 1 undefined on input line 6.
-
-
-LaTeX Warning: Citation `Leudec' on page 1 undefined on input line 6.
-
-
-LaTeX Warning: Citation `Leudec' on page 1 undefined on input line 8.
-
-
-LaTeX Warning: Citation `chen' on page 1 undefined on input line 8.
-
-
-LaTeX Warning: Citation `Boengler' on page 1 undefined on input line 8.
-
-
-LaTeX Warning: Citation `java' on page 1 undefined on input line 8.
-
 LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <8> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 12.
-[1{C:/Users/julia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+ [1{C:/Users/julia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 ]
 Underfull \hbox (badness 1189) in paragraph at lines 12--13
@@ -483,100 +431,43 @@ u-la-dos a la pa-tolog^^S^^Pa
  []
 
 ) (tex_files/material_methods.tex
-
-LaTeX Warning: Citation `jimenez2019introduccion' on page 2 undefined on input 
-line 10.
-
-
-LaTeX Warning: Citation `Giorgi2022' on page 2 undefined on input line 13.
-
-
-LaTeX Warning: Citation `RLanguaje' on page 2 undefined on input line 16.
-
-
-LaTeX Warning: Citation `Python_Teams' on page 2 undefined on input line 23.
-
-
-LaTeX Warning: Citation `kohler2014human' on page 2 undefined on input line 31.
-
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 29--32
 
  []
 
 [2]
-
-LaTeX Warning: Citation `szklarczyk2015string' on page 3 undefined on input lin
-e 38.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 36--39
 
  []
 
-
-LaTeX Warning: Citation `jenuth1999ncbi' on page 3 undefined on input line 44.
-
-
-LaTeX Warning: Citation `valdez2016analisis' on page 3 undefined on input line 
-55.
-
-
-LaTeX Warning: Citation `igraphref' on page 3 undefined on input line 55.
+[3] [4] [5]
+Overfull \hbox (17.62315pt too wide) in paragraph at lines 117--118
+[]\OT1/cmr/m/n/10 Los datos se trans-for-maron en un grafo no di-rigido uti-liz
+ando \OT1/cmr/m/it/10 graph[]from[]data[]frame()\OT1/cmr/m/n/10 ,
+ []
 
 
-LaTeX Warning: Citation `igraphmanual' on page 3 undefined on input line 55.
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
 
 
-LaTeX Warning: Citation `clusterprofiler1' on page 3 undefined on input line 57
-.
+Overfull \hbox (7.77837pt too wide) in paragraph at lines 121--122
+[]\OT1/cmr/m/n/10 Para la vi-su-al-izaci^^Son, se uti-lizaron di-ver-sas es-tra
+te-gias para rep-re-sen-tar gr^^Saficamente
+ []
 
 
-LaTeX Warning: Citation `clusterprofiler2' on page 3 undefined on input line 57
-.
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
+ []
 
-LaTeX Warning: Citation `clusterprofiler3' on page 3 undefined on input line 57
-.
+[6] [7]) (tex_files/resultados.tex) (tex_files/discusion.tex)
+(tex_files/conclusiones.tex) [8] (report.bbl
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <7> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 292.
 
-
-LaTeX Warning: Citation `clusterprofiler4' on page 3 undefined on input line 57
-.
-
-
-LaTeX Warning: Citation `org.Hs.eg.db_manual' on page 3 undefined on input line
- 59.
-
-[3]
-
-LaTeX Warning: Citation `enrichplotmanual' on page 4 undefined on input line 61
-.
-
-
-LaTeX Warning: Citation `optparse' on page 4 undefined on input line 63.
-
-
-LaTeX Warning: Citation `ggplot2' on page 4 undefined on input line 65.
-
-
-LaTeX Warning: Citation `mckinney2011pandas' on page 4 undefined on input line 
-72.
-
-
-LaTeX Warning: Citation `chandra2015python' on page 4 undefined on input line 7
-7.
-
-
-LaTeX Warning: Citation `hagberg2020networkx' on page 4 undefined on input line
- 82.
-
-
-LaTeX Warning: Citation `ari2014matplotlib' on page 4 undefined on input line 8
-7.
-
-[4] [5] [6]) (tex_files/resultados.tex) (tex_files/discusion.tex)
-(tex_files/conclusiones.tex) (report.bbl) [7]
+ [9]) [10]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (report.aux)
@@ -589,34 +480,33 @@ L3 programming layer <2024-01-04>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: A0339D8FE28D3BDE38D472B489CEB6CD;2183.
  ) 
 Here is how much of TeX's memory you used:
- 10380 strings out of 474486
- 162864 string characters out of 5743755
- 1940542 words of memory out of 5000000
- 32495 multiletter control sequences out of 15000+600000
- 565398 words of font info for 61 fonts, out of 8000000 for 9000
+ 10525 strings out of 474486
+ 164949 string characters out of 5743755
+ 1943542 words of memory out of 5000000
+ 32593 multiletter control sequences out of 15000+600000
+ 566252 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,10n,79p,905b,557s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/julia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbx10.pfb><C:/Users/julia/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmbxti10.pfb><C:/Users/julia/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmr10.pfb><C:/Users/julia/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/julia/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/julia/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/julia/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/ju
-lia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:
-/Users/julia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti1
-0.pfb>
-Output written on report.pdf (7 pages, 173553 bytes).
+ 85i,10n,79p,899b,723s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\julia\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1000.pk><C:/Users/julia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb><C:/Users/julia/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmbxti10.pfb><C:/Users/julia/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/julia/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/julia/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/julia/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/julia/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Us
+ers/julia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.p
+fb><C:/Users/julia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmti10.pfb><C:/Users/julia/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmtt8.pfb>
+Output written on report.pdf (10 pages, 218501 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
+ 303 PDF objects out of 1000 (max. 8388607)
+ 74 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

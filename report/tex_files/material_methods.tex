@@ -90,45 +90,93 @@ Fue desarrollada por John D. Hunter y es mantenida por la comunidad científica 
 
 \subsection{\textbf{Métodos}}
 
-\subsubsection{\textbf{Obtención de datos y construcción de la red de interacciones}}
+\subsubsection{Obtención de datos y construcción de la red de interacciones}
 
 El análisis comenzó con la identificación de genes asociados al fenotipo de interés, definido por el código HP:0008316, que corresponde a "mitocondrias anormales en tejido muscular" en la Ontología del Fenotipo Humano (HPO, por sus siglas en inglés). Este paso fue crucial para establecer una base de datos inicial que sustentara el estudio.
 
-Para llevar a cabo este análisis de manera sistemática, desarrollamos un script en Python llamado \textbf{\textit{hpo\_genes\_fetcher.py}} que interactuaba con la API de HPO. La elección de Python como lenguaje principal se basó en su flexibilidad y en su amplio ecosistema de bibliotecas, como \textit{requests} y \textit{pandas}, que son ideales para manejar datos y realizar solicitudes con las APIs. El script se diseñó para automatizar la extracción de genes relacionados con el fenotipo, lo que evitaba errores manuales y garantizaba la reproducibilidad del proceso.
+Para llevar a cabo este análisis de manera sistemática, desarrollamos un script en \textbf{Python} llamado \textbf{\textit{hpo\_genes\_fetcher.py}} que interactuaba con la API de \textbf{HPO}. La elección de Python como lenguaje principal se basó en su flexibilidad y en su amplio ecosistema de bibliotecas, como \textit{requests} y \textbf{\textit{pandas}}, que son ideales para manejar datos y realizar solicitudes con las APIs. El script se diseñó para automatizar la extracción de genes relacionados con el fenotipo, lo que evitaba errores manuales y garantizaba la reproducibilidad del proceso.
 
-Se utilizó la biblioteca \textit{requests} para realizar solicitudes HTTP de tipo GET a los endpoints específicos de la API de HPO. El identificador del fenotipo, HP:0008316, se incluyó como parámetro en la URL de la solicitud, asegurando que los datos recuperados estuvieran específicamente relacionados con este término fenotípico. La respuesta de la API, en formato JSON (estándar ampliamente utilizado para el intercambio de datos estructurados en aplicaciones web), contenía una lista dentro del campo "genes", que incluía los nombres de los genes asociados al fenotipo. Este formato estructurado fue procesado utilizando la biblioteca \textit{pandas}, lo que permitió organizar la información en un DataFrame, una estructura de datos tabular que facilita su análisis y manipulación.
+Se utilizó la biblioteca \textbf{\textit{requests}} para realizar solicitudes HTTP de tipo GET a los endpoints específicos de la API de HPO. El identificador del fenotipo, HP:0008316, se incluyó como parámetro en la URL de la solicitud, asegurando que los datos recuperados estuvieran específicamente relacionados con este término fenotípico. La respuesta de la API, en formato JSON (estándar ampliamente utilizado para el intercambio de datos estructurados en aplicaciones web), contenía una lista dentro del campo "genes", que incluía los nombres de los genes asociados al fenotipo.
 
-Una vez organizados, los datos se depuraron para eliminar duplicados o entradas incompletas, con lo que se garantizó que la lista de genes obtenida estuviera lista para su uso en análisis posteriores. Finalmente, los genes se almacenaron en un archivo de texto estructurado para facilitar su acceso y uso en las etapas siguientes del estudio.
+Finalmente, los genes se almacenaron en un archivo de texto estructurado llamado \textit{genes\_list.txt}, dentro de un directorio especificado, para facilitar su acceso y uso en las etapas siguientes del estudio.
 
-La lista de genes recopilada fue utilizada como entrada en un segundo script de Python, \textbf{\textit{fetch\_interactions.py}}, que se encargó de analizar las interacciones proteicas entre los genes utilizando la API de \textbf{STRINGdb}. Este análisis es crucial para comprender cómo interactúan entre sí las proteínas codificadas por los genes, lo que puede revelar información sobre sus funciones en el fenotipo.
+El archivo generado fue utilizado como entrada en un segundo script de Python, \textbf{\textit{fetch\_interactions.py}}, que se encargó de analizar las interacciones proteicas entre las proteínas codificadas por los genes recopilados. Este análisis es crucial para comprender cómo interactúan entre sí las proteínas codificadas por los genes, lo que puede revelar información sobre sus funciones en el fenotipo estudiado.
 
-Utilizando dicha API, el script envió solicitudes POST que incluían los nombres de los genes formateados con \%0d como delimitador, cumpliendo con los requisitos específicos de la API. Se configuraron parámetros como la especie de interés (Homo sapiens, código NCBI: 9606) y un umbral de confianza de 0.5, significando esto que las interacciones incluidas tienen al menos un 50\% de probabilidad de ser funcionalmente relevantes, según los cálculos de STRINGdb.
+Utilizando la API de \textbf{STRINGdb}, el script empleó solicitudes POST para enviar los nombres de las proteínas formateados con \%0d como delimitador, cumpliendo con los requisitos específicos de la API. Se configuraron parámetros como la especie de interés, en nuestro caso el Homo sapiens, cuyo código en el \textbf{NCBI} es 9606; y un umbral de confianza de 0.5, significando esto que las interacciones incluidas tienen al menos un 50\% de probabilidad de ser funcionalmente relevantes, según los cálculos de STRINGdb.
 
-La respuesta de la API, en formato JSON, proporcionó información detallada sobre las interacciones, incluyendo los genes conectados, la naturaleza de las interacciones y una puntuación de confianza. Además, el script incluyó una función para descargar y guardar una representación visual de la red directamente desde STRINGdb en formato PNG, lo que facilitó la documentación gráfica de las interacciones proteicas.
+La respuesta de la API, en formato JSON, proporcionó información detallada sobre las interacciones, incluyendo los genes involucrados, la naturaleza de las interacciones y una puntuación de confianza. Estos datos se filtraron y almacenaron en un archivo CSV, \textit{interacciones\_proteinas.csv}, lo que permitió un análisis estructurado y reproducible.
 
-\subsubsection{\textbf{Análisis de la red y visualización avanzada}}
+Además, el script incluyó una funcionalidad para generar una representación visual de la red de interacciones en formato PNG, utilizando otro endpoint de STRINGdb. Esta imagen, guardada en un directorio específico, facilitó la documentación y presentación gráfica de los resultados, ayudando a comprender la topología de la red y la conectividad de las proteínas involucradas.
 
-El análisis detallado de la red de interacciones proteicas se realizó en \textbf{R} utilizando la biblioteca \textbf{iGraph}. Este paso fue fundamental para profundizar en las propiedades estructurales y funcionales de la red, permitiendo explorar relaciones clave entre los genes asociados a nuestro fenotipo. Para comenzar, los datos generados previamente con STRINGdb, que contenían la lista de nodos y aristas, fueron exportados en formato CSV y posteriormente importados en R mediante las funciones estándar \textit{read.csv()}. Este enfoque aseguró la interoperabilidad entre Python y R, facilitando la integración del flujo de trabajo.
+En conjunto, estos dos scripts establecieron las bases para el análisis detallado de las interacciones proteicas y su papel potencial en el fenotipo estudiado, integrando datos de diversas fuentes de manera automatizada y reproducible.
 
-En R, los datos se transformaron en un grafo dirigido utilizando la función \textit{graph\_from\_data\_frame()}. Este grafo representaba los genes como nodos y las interacciones entre ellos como aristas ponderadas, donde el peso correspondía a la puntuación de confianza calculada por STRINGdb. La dirección de aristas permitió representar el flujo funcional entre los genes.
+\subsubsection{Análisis de la red y visualización avanzada}
 
-La visualización inicial del grafo se realizó utilizando la función \textit{plot()} de iGraph, con personalizaciones que resaltaban características clave de la red. Se ajustaron colores y tamaños de los nodos según su grado de conectividad, lo que permitió identificar rápidamente los genes más conectados o "hubs". Para optimizar la interpretación visual, se probaron diferentes algoritmos de disposición, como \textit{layout\_with\_fr} (disposición de Fruchterman-Reingold) y \textit{layout\_nicely}, que distribuyen los nodos de manera equilibrada según sus conexiones. Estas configuraciones facilitaron la identificación de patrones estructurales en la red y permitieron una representación gráfica intuitiva de las interacciones proteicas.
+El análisis detallado de la red de interacciones proteicas se realizó en \textbf{R} utilizando la biblioteca \textbf{iGraph}. Este paso fue fundamental para profundizar en las propiedades estructurales y funcionales de la red, permitiendo identificar patrones clave y relaciones críticas entre los genes asociados a nuestro fenotipo. Los datos generados previamente con STRINGdb, que contenían la lista de nodos y aristas en formato CSV, fueron importados en R mediante la función \textit{read.csv()}, asegurando un flujo de trabajo integrado y reproducible entre las herramientas empleadas.
 
-Además del grado de los nodos, se calcularon otras métricas topológicas relevantes, como la centralidad de intermediación, que identifica genes clave para el flujo de información, y el coeficiente de agrupamiento, que mide la tendencia de los genes a formar clústeres densos.
+Los datos se transformaron en un grafo no dirigido utilizando \textit{graph\_from\_data\_frame()}, donde los nodos representaban genes y las aristas sus interacciones proteicas. Este grafo permitió analizar y visualizar las conexiones de la red, asignando propiedades como colores, tamaños y pesos según métricas específicas. Aunque las interacciones se procesaron como no dirigidas, los pesos de las aristas correspondieron a la puntuación de confianza calculada por STRINGdb, lo que proporcionó un marco robusto para interpretar la importancia funcional de cada conexión.
 
-La distribución del grado de los nodos se realizó mediante histogramas, que mostraban cómo se distribuían las conexiones entre los genes. Adicionalmente, se generaron mapas de calor que representaban la intensidad de las interacciones (pesos de las aristas), proporcionando una visión global de las relaciones más relevantes. Estas visualizaciones se realizaron utilizando bibliotecas de R como \textit{ggplot2} y \textit{heatmap()}, que facilitaron la interpretación de los datos.
+\paragraph{Visualización de la red} \mbox{}\\
 
-Finalmente, se evaluaron las comunidades detectadas mediante algoritmos de agrupamiento. Cada comunidad fue analizada en términos de su relevancia funcional en el contexto del fenotipo, considerando la conectividad interna y los genes principales en cada módulo. Este enfoque permitió identificar subgrupos funcionales de genes, lo que ayudó a interpretar mejor las relaciones biológicas subyacentes.
+Para la visualización, se utilizaron diversas estrategias para representar gráficamente la red, destacando características clave mediante personalizaciones avanzadas en iGraph. La función \textit{plot()} se empleó para crear visualizaciones iniciales, ajustando los colores y tamaños de los nodos en función de su grado de conectividad, lo que permitió identificar fácilmente los genes más conectados o "hubs".Además, se probaron diferentes algoritmos de disposición, como:
 
-\subsubsection{\textbf{Análisis de enriquecimiento funcional}}
+\begin{itemize}
+	\item \textit{layout\_with\_fr} (Fruchterman-Reingold), ideal para visualizar la red como un sistema de fuerzas equilibradas.
+	\item \textit{layout\_in\_circle},para destacar patrones circulares de conectividad.
+\end{itemize}
 
-El análisis de enriquecimiento funcional se realizó en R utilizando el script \textit{functional\_analysis.R}, diseñado para identificar procesos biológicos sobrerrepresentados entre los genes obtenidos en los pasos previos. Este análisis se enfocó exclusivamente en términos de procesos biológicos (GO-BP) utilizando el paquete \textit{clusterProfiler} y la base de datos de anotaciones \textit{org.Hs.eg.db}, que ofrece información detallada sobre genes humanos.
+Estas visualizaciones se generaron y guardaron automáticamente en archivos PNG utilizando el script \textbf{\textit{plot\_network.R}}. Este produjo representaciones visuales avanzadas, incluyendo: redes básicas para obtener una visión general de la topología, redes escaladas por grado de conectividad de los nodos y mapas de calor que ilustraron la intensidad de las interacciones entre genes.
 
-El script procesó archivos de texto que contenían listas de genes, organizados en un directorio de entrada especificado por el usuario. Para cada archivo, los genes se leyeron y limpiaron utilizando funciones de R, asegurando que los identificadores fueran válidos para el análisis. A partir de estos datos, se aplicó la función \textit{enrichGO()} de \textit{clusterProfiler}, configurada para trabajar con símbolos de genes humanos (SYMBOL) y para identificar procesos biológicos relevantes. Se empleó el método de ajuste del p-valor de Benjamini-Hochberg (BH) para controlar la tasa de falsos positivos, con un umbral de significancia de 0.05, asegurando la robustez de los resultados obtenidos.
+Además de las visualizaciones, se calcularon un conjunto de métricas clave para describir la red, incluyendo:
 
-Cada conjunto de genes fue evaluado por su relación con términos de la ontología de procesos biológicos, generando resultados que incluyeron términos clave relacionados con el metabolismo energético y la regulación de procesos celulares. Para facilitar la interpretación, se generaron gráficos de puntos (dotplot) que representaban visualmente los términos enriquecidos junto con sus niveles de significancia. Estos gráficos se guardaron como archivos PNG en un directorio de salida definido por el usuario, garantizando una documentación clara y reproducible de los resultados.
+\begin{itemize}
+	\item Grado de conectividad: Para identificar genes con mayor número de interacciones (hubs).
+	\item Centralidad de intermediación (betweenness): Para detectar nodos clave en el flujo de información.
+	\item Coeficiente de agrupamiento: Para evaluar la formación de clústeres densos de genes.
+	\item Densidad de la red y conectividad global: Indicando el nivel general de cohesión de la red.
+\end{itemize}
 
-Con este script se automatizó el análisis para múltiples conjuntos de genes, procesando todos los archivos presentes en el directorio de entrada. Esto permitió una ejecución eficiente, reduciendo la intervención manual y asegurando la consistencia en el procesamiento de los datos.
+Estas métricas se resumieron en un archivo de texto (\textit{network\_metrics.txt}), que sirvió como referencia para el análisis estructural.
+
+\paragraph{Análisis de comunidades} \mbox{}\\
+
+Por otra parte, la identificación y análisis de comunidades funcionales se llevó a cabo utilizando el script \textbf{\textit{cluster\_proteinas.R}}, que implementaba varios algoritmos de agrupamiento como:
+
+\begin{itemize}
+	\item Edga Betweenness: Basado en la eliminación de aristas críticas.
+	\item Walktrap: Basado en recorridos aleatorios para identificar módulos densos.
+	\item Fast Greedy, Infomap y Label Propagation: Métodos optimizados para diferentes contextos topológicos.
+\end{itemize}
+
+El script seleccionó automáticamente el mejor algoritmo en función de la modularidad, una métrica que mide la calidad de los clústeres formados. Las comunidades detectadas se visualizaron en gráficos coloreados y dendogramas, destacando la jerarquía de los clústeres y los nodos principales en cada uno. Los genes pertenecientes a cada comunidad se guardaron en archivos separados para facilitar su análisis funcional posterior.
+
+La integración de métricas, visualizaciones y análisis de comunidades permitió identificar subgrupos funcionales dentro de la red de interacción proteica. Cada clúster se analizó considerando su relevancia en el contexto del fenotipo, proporcionando información valiosa sobre las relaciones biológicas subyacentes. Este enfoque combinó análisis cuantitativo y cualitativo, ofreciendo una interpretación más profunda y completa de los datos.
+
+\subsubsection{Análisis de enriquecimiento funcional}
+
+El análisis de enriquecimiento funcional se llevó a cabo en R utilizando el script \textbf{\textit{functional\_analysis.R}}, desarrollado para identificar procesos biológicos sobrerrepresentados en los conjuntos de genes obtenidos en pasos previos. Este análisis se enfocó exclusivamente en términos de la ontología de procesos biológicos (GO-BP) y se realizó con la ayuda del paquete \textbf{\textit{clusterProfiler}}, junto con la base de datos de anotaciones \textbf{\textit{org.Hs.eg.db}}, que proporciona información detallada y actualizada sobre los genes humanos.
+
+El script procesó archivos de texto que contenían listas de genes, organizados en un directorio de entrada especificado por el usuario. Cada archivo se trató como un conjunto independiente de genes a analizar. Los nombres de los genes se leyeron utilizando funciones estándar de R, y se eliminaron espacios en blanco para asegurar que los identificadores fueran válidos y consistentes con los registros de la base de datos. Este paso fue fundamental para garantizar la precisión y calidad de los resultados.
+
+Una vez preparados los datos, se aplicó la función \textit{enrichGO()} de \textit{clusterProfiler}. Esta función realiza un análisis de enriquecimiento para identificar términos de GO-BP asociados significativamente con los genes del conjunto. Los parámetros configurados incluyeron:
+
+\begin{itemize}
+	\item Tipo de clave: Se utilizó \textit{SYMBOL}, dado que los identificadores de los genes estaban en formato de símbolo estándar.
+	\item Base de datos: \textit{org.Hs.eg.db}, enfocada en genes humanos.
+	\item Ontología: Procesos biológicos (\textit{BP}).
+	\item Ajuste del p-valor: Método de Benjamini-Hochberg (\textit{pAdjustMethod = "BH"}) para controlar la tasa de falsos positivos.
+	\item Umbral de significancia: Un valor de \textit{p-value cutoff} de 0.05, para seleccionar solo los términos más relevantes.
+\end{itemize}
+
+El análisis produjo resultados que incluían términos clave de GO-BP relacionados con funciones biológicas críticas, como el metabolismo energético, la regulación de procesos celulares y respuestas al estrés. Estos resultados ofrecieron una visión más profunda de las posibles funciones desempeñadas por los genes en el contexto del fenotipo estudiado.
+
+Para facilitar la interpretación de los resultados, el script generó gráficos de puntos (dotplot), donde cada punto representaba un término enriquecido de GO-BP. Los gráficos incluían el grado de enriquecimiento, indicado por el tamaño del punto; y la significancia estadística, representada en un eje de coordenadas.
+
+Los gráficos se guardaron como archivos PNG en un directorio de salida especificado por el usuario. El nombre de cada archivo reflejaba el conjunto de genes procesado, asegurando una organización clara de los resultados.
+
+El script estaba diseñado para procesar múltiples archivos de genes de forma automática. Todos los archivos en el directorio de entrada se evaluaron iterativamente, generando un gráfico independiente para cada conjunto. Este enfoque automatizado redujo la necesidad de intervención manual, mejoró la reproducibilidad y permitió manejar grandes volúmenes de datos de manera eficiente.
+
+Este análisis proporcionó información clave sobre las funciones biológicas asociadas con los genes agrupados en clústeres, permitiendo identificar patrones funcionales relevantes para el fenotipo. Al combinar un enfoque estadístico robusto con visualizaciones claras, se logró una interpretación más completa y fundamentada de los datos biológicos.
 
 
 
