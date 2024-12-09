@@ -38,6 +38,7 @@ fi
 # Instalar las dependencias en R (igraph)
 echo "Instalando dependencias en R..."
 Rscript -e "if (!requireNamespace('igraph', quietly = TRUE)) install.packages('igraph')"
+Rscript -e "if (!requireNamespace('optparse', quietly = TRUE)) install.packages('optparse')"
 
 echo "Configuración completada con éxito."
 
