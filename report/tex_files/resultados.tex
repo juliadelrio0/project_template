@@ -60,3 +60,45 @@ En las ramas más alejadas del dendrograma se encontraban genes como \textbf{NUB
 \paragraph{Relación entre clusters} \mbox{}\\
 
 La estructura jerárquica observada en el dendrograma confirmó la organización de los clusters identificados previamente. Los genes del primer y segundo cluster mostraron una conexión más estrecha, con roles críticos en la cadena respiratoria y la fosforilación oxidativa. Por otro lado, los genes del tercer cluster aparecieron más tempranamente segregados, sugiriendo funciones complementarias o especializadas dentro del contexto mitocondrial.
+
+\paragraph{}
+
+Tras haber observado la separación en comunidades mediante el uso de diferentes algoritmos de clustering, se procedió a realizar un análisis funcional detallado para cada uno de los grupos identificados. Este análisis tuvo como objetivo explorar las funciones biológicas principales asociadas a los genes de cada comunidad, así como su posible implicación en procesos mitocondriales clave. Adicionalmente, se analizaron los nodos principales (\textbf{top nodes}) de la red, definidos como aquellos genes con mayor conectividad y centralidad, que podrían desempeñar roles esenciales dentro de la red biológica.
+
+\paragraph{Análisis funcional del primer clúster} \mbox{}\\
+
+El primer clúster, que agrupa principalmente proteínas de la familia NDUF (e.g., NDUFS7, NDUFAF1, NDUFB10), mostró un enriquecimiento significativo en procesos relacionados con la organización mitocondrial y el ensamblaje del complejo I de la cadena respiratoria. Entre los términos más destacados se encuentran "NADH dehydrogenase complex assembly" y "mitochondrial respiratory chain complex assembly". Estos resultados refuerzan el papel fundamental de este grupo en la producción de energía celular mediante la fosforilación oxidativa.
+
+El alto \textbf{GeneRatio} (\(\geq 0.6\)) y los valores ajustados de significancia extremadamente bajos (\( 5.6 \times 10^{-40} \)) sugieren que la mayoría de los genes de este clúster están funcionalmente relacionados. Esto subraya la importancia de estos genes en el mantenimiento de la bioenergética mitocondrial y sugiere posibles implicaciones en enfermedades asociadas con disfunción mitocondrial.
+
+\paragraph{Análisis funcional del segundo clúster} \mbox{}\\
+
+El segundo clúster, compuesto por genes como MT-CO1, MT-ATP6, MT-ND6 y MT-ND5, presentó una clara asociación con procesos relacionados con la respiración celular y la síntesis de ATP. Los términos enriquecidos, como "proton motive force-driven ATP synthesis" y "aerobic electron transport chain", indican una fuerte implicación en la generación de energía mediante la fosforilación oxidativa.
+
+Con un \textbf{GeneRatio} cercano a 0.84 y valores de p.adjust (\( 1.5 \times 10^{-10} \)), este clúster se posiciona como central en el metabolismo energético. Además, la inclusión de términos asociados a la biosíntesis de nucleótidos sugiere un rol clave en procesos que demandan altos niveles de energía celular.
+
+\paragraph{Análisis funcional del tercer clúster} \mbox{}\\
+
+El tercer clúster, que incluye genes como NDUFS2, TIMMDC1 y NUBPL, mostró un menor grado de conectividad, lo que podría indicar funciones más especializadas o complementarias. Sin embargo, su enriquecimiento en términos como "oxidative phosphorylation" y "mitochondrial electron transport, NADH to ubiquinone" refuerza su papel en la cadena de transporte de electrones.
+
+Aunque el \textbf{GeneRatio} es ligeramente menor en comparación con los dos clústeres anteriores, los valores de p.adjust (\( 1.1 \times 10^{-49} \)) confirman la relevancia de los procesos asociados. Estos resultados sugieren que los genes de este clúster contribuyen a la funcionalidad mitocondrial de manera más indirecta, pero igualmente esencial.
+
+\paragraph{Nodos principales (Top Nodes)} \mbox{}\\
+
+Los top nodes de la red corresponden a genes con alta conectividad y centralidad, lo que los posiciona como elementos clave dentro de la red biológica. Entre los procesos destacados asociados a estos nodos se encuentran "ATP biosynthetic process" y "aerobic electron transport chain". El \textbf{GeneRatio} extremadamente alto (~1.0) refleja que casi todos los genes analizados participan en estas funciones centrales.
+
+Estos nodos no solo actúan como puntos de integración funcional, sino que también representan posibles dianas terapéuticas en condiciones patológicas asociadas con la disfunción mitocondrial. Los valores de significancia ajustada (\( 2 \times 10^{-9} \)) validan la robustez de este análisis, destacando la relevancia biológica de los genes más centrales en la red.
+
+\paragraph{Lista de genes} \mbox{}\\
+
+El análisis funcional de la lista completa de genes seleccionados muestra un enriquecimiento significativo en procesos clave como "mitochondrion organization", "oxidative phosphorylation" y "mitochondrial respiratory chain complex assembly". Estos resultados refuerzan la relación de los genes con la regulación de la bioenergética mitocondrial y el ensamblaje de componentes esenciales.
+
+El \textbf{GeneRatio} alto (\(\geq 0.6\)) y los valores de p.adjust extremadamente bajos (\( 1.1 \times 10^{-49} \)) validan la importancia de estos procesos. Además, se observa una concordancia con los hallazgos de los clústeres, destacando genes clave como MT-ATP6 y miembros de la familia NDUF.
+
+Este análisis complementa los resultados anteriores, ofreciendo una visión global de la relevancia funcional de los genes seleccionados en los procesos mitocondriales fundamentales.
+
+\paragraph{}
+
+El análisis funcional de los clústeres identificados por el algoritmo Fast Greedy confirma que los genes agrupados comparten funciones biológicas específicas relacionadas con la mitocondria, principalmente en la producción de energía y el ensamblaje de componentes mitocondriales. Los genes del primer y segundo clúster mostraron una conexión más estrecha, mientras que los del tercer clúster aparecen más segregados, con funciones posiblemente complementarias.
+
+El análisis de los top nodes aporta una perspectiva adicional, destacando genes clave que actúan como nodos centrales en la red. Este enfoque combinado entre análisis funcional y estructural permite no solo entender las funciones principales de cada clúster, sino también identificar posibles reguladores centrales de la red de interacciones. Esto refuerza la utilidad de los análisis de clustering y funcionales como herramientas para explorar la complejidad biológica de los sistemas mitocondriales.
