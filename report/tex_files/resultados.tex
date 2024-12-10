@@ -2,12 +2,11 @@
 \section{Resultados}
 
 
-En el marco de este estudio, se obtuvieron inicialmente 48 genes asociados con el fenotipo mitocondrial desde la base de datos Human Phenotype Ontology (HPO), que se relacionan con funciones celulares esenciales en la mitocondria, como la cadena respiratoria, la biogénesis mitocondrial, y la regulación del metabolismo energético. Estos genes fueron seleccionados con el objetivo de explorar su posible interrelación dentro de una red de interacciones de proteínas, utilizando la base de datos STRING.
+En el marco de este estudio, se obtuvieron inicialmente 48 genes asociados con el fenotipo mitocondrial desde la base de datos Human Phenotype Ontology (HPO). Estos genes se relacionaron con funciones celulares esenciales en la mitocondria, como la cadena respiratoria, la biogénesis mitocondrial y la regulación del metabolismo energético. Los genes fueron seleccionados con el objetivo de explorar su posible interrelación dentro de una red de interacciones de proteínas, utilizando la base de datos STRING.
 
-Al realizar el análisis de interacciones utilizando los identificadores de estos 48 genes, se observó que solo 38 genes interaccionaron entre sí dentro de la red generada. Este hallazgo sugiere que, aunque todos los genes descargados están asociados con el fenotipo mitocondrial, no todos ellos tienen interacciones directas en el contexto de las proteínas mitocondriales. En particular, algunos genes no mostraron evidencia de interacción directa con otros genes seleccionados, lo que podría indicar que sus roles en la biología mitocondrial pueden no depender de interacciones proteicas directas o que interactúan a través de mecanismos más complejos que no son reflejados en esta red.
+Al realizar el análisis de interacciones utilizando los identificadores de estos 48 genes, se observó que solo 38 genes interaccionaron entre sí dentro de la red generada. Este hallazgo sugirió que, aunque todos los genes descargados estaban asociados con el fenotipo mitocondrial, no todos ellos presentaron interacciones directas en el contexto de las proteínas mitocondriales. En particular, algunos genes no mostraron evidencia de interacción directa con otros genes seleccionados, lo que podría haber indicado que sus roles en la biología mitocondrial no dependían de interacciones proteicas directas o que interactuaban a través de mecanismos más complejos no reflejados en esta red.
 
-
-Uno de los genes más relevantes en este análisis es MYH7, que está relacionado con la miocardiopatía y es conocido por su papel en la función mitocondrial. Sin embargo, MYH7 no presentó interacciones con otros genes mitocondriales en esta red, lo que sugiere que su influencia en el fenotipo mitocondrial podría estar mediada por mecanismos independientes, tal vez a través de la regulación de procesos mitocondriales o por interacciones con otras proteínas no presentes en la red de interacciones utilizadas en este análisis.
+Uno de los genes más relevantes en este análisis fue MYH7, que estaba relacionado con la miocardiopatía y era conocido por su papel en la función mitocondrial. Sin embargo, MYH7 no presentó interacciones con otros genes mitocondriales en esta red, lo que sugirió que su influencia en el fenotipo mitocondrial podría haber estado mediada por mecanismos independientes, tal vez a través de la regulación de procesos mitocondriales o por interacciones con otras proteínas no incluidas en la red de interacciones analizada.
 
 
 Para profundizar en el análisis de la red obtenida, se han aplicado diferentes algoritmos de clustering con el objetivo de identificar comunidades o grupos de proteínas que interactúen más estrechamente entre sí. Los algoritmos utilizados fueron: Fast Greedy, Edge Betweenness, Walktrap, Infomap y Label Propagation, y se evaluaron mediante la métrica de modularidad, que mide la calidad de las particiones realizadas.
@@ -33,15 +32,15 @@ Para profundizar en el análisis de la red obtenida, se han aplicado diferentes 
 \vspace{1em}
 	
 
-Entre los algoritmos evaluados observamos que Fast Greedy, destacó como el algoritmo más efectivo, lo que indica que logra separar de forma significativa las diferentes comunidades.
+Entre los algoritmos evaluados, se observó que Fast Greedy destacó como el algoritmo más efectivo, lo que indicó que logró separar de forma significativa las diferentes comunidades.
 
 El algoritmo identificó tres clúster principales:
 
-- En el primer clúster podemos encontrar nodos como (NDUFS7, NDUFAF1, NDUFB10, NDUFS6, NDUFV2), este clúster reúne muchas proteínas de familia NDUF, fundamentales para la producción de energía en la célula. Entre estos elementos hay una alta conectividad.
+En el primer clúster se encontraron nodos como NDUFS7, NDUFAF1, NDUFB10, NDUFS6, NDUFV2. Este clúster reunió muchas proteínas de la familia NDUF, fundamentales para la producción de energía en la célula. Entre estos elementos se observó una alta conectividad.
 
--El segundo clúster contiene como nodos más destacados (MT-CO1, MT-ATP6, MT-ND6, MT-ND5), este grupo parece estar más enfocado en la respiración celular y fosforilación oxidativa.
+El segundo clúster contuvo como nodos más destacados MT-CO1, MT-ATP6, MT-ND6, MT-ND5. Este grupo pareció estar más enfocado en la respiración celular y la fosforilación oxidativa.
 
--El tercer clúster, está representado por elementos menos conectados como por ejemplo: NDUFS2, TIMMDC1, NUBPL. Este clúster podría indicar que se están enfocando en procesos relacionados con la cadena de transporte de electrones.
+El tercer clúster estuvo representado por elementos menos conectados, como por ejemplo: NDUFS2, TIMMDC1, NUBPL. Este clúster podría haber indicado que se estaban enfocando en procesos relacionados con la cadena de transporte de electrones.
 
 El dendrograma generado mediante clustering jerárquico aportó una perspectiva adicional sobre cómo se relacionaban los genes seleccionados. Esta herramienta organizó los genes en una estructura jerárquica basada en sus similitudes funcionales, permitiendo observar con mayor claridad la proximidad o separación entre ellos dentro de la red de interacciones.
 
