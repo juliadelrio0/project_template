@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{38}
+\begin{thebibliography}{42}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -551,6 +551,72 @@ pp. \bfpage{1}--\blpage{6}
 \end{bchapter}
 \endbibitem
 
+%%% 39
+\bibitem{Rebeca}
+\begin{botherref}
+\oauthor{\bsnm{Jiménez}, \binits{R.M.}}:
+Enfermedades mitocondriales y biogénesis mitocondrial.
+Universidad Autónoma de Madrid
+(2013)
+\end{botherref}
+\endbibitem
+
+%%% 40
+\bibitem{Milner}
+\begin{botherref}
+\oauthor{\bsnm{Milner}, \binits{D.J.}},
+\oauthor{\bsnm{Mavroidis}, \binits{M.}},
+\oauthor{\bsnm{Weisleder}, \binits{N.}},
+\oauthor{\bsnm{Capetanaki}, \binits{Y.}}:
+Desmin cytoskeleton linked to muscle mitochondrial distribution and respiratory
+  function.
+Journal of Cell Biology
+\textbf{150}
+(2000).
+doi:\doiurl{10.1083/jcb.150.6.1283}
+\end{botherref}
+\endbibitem
+
+%%% 41
+\bibitem{Zhao2011}
+\begin{botherref}
+\oauthor{\bsnm{Zhao}, \binits{X.}},
+\oauthor{\bsnm{León}, \binits{I.R.}},
+\oauthor{\bsnm{Bak}, \binits{S.}},
+\oauthor{\bsnm{Mogensen}, \binits{M.}},
+\oauthor{\bsnm{Wrzesinski}, \binits{K.}},
+\oauthor{\bsnm{Højlund}, \binits{K.}},
+\oauthor{\bsnm{Jensen}, \binits{O.N.}}:
+Phosphoproteome analysis of functional mitochondria isolated from resting human
+  muscle reveals extensive phosphorylation of inner membrane protein complexes
+  and enzymes.
+Molecular and Cellular Proteomics
+\textbf{10}
+(2011).
+doi:\doiurl{10.1074/mcp.M110.000299}
+\end{botherref}
+\endbibitem
+
+%%% 42
+\bibitem{Cameron2011}
+\begin{botherref}
+\oauthor{\bsnm{Cameron}, \binits{J.M.}},
+\oauthor{\bsnm{Levandovskiy}, \binits{V.}},
+\oauthor{\bsnm{MacKay}, \binits{N.}},
+\oauthor{\bsnm{Ackerley}, \binits{C.}},
+\oauthor{\bsnm{Chitayat}, \binits{D.}},
+\oauthor{\bsnm{Raiman}, \binits{J.}},
+\oauthor{\bsnm{Halliday}, \binits{W.H.}},
+\oauthor{\bsnm{Schulze}, \binits{A.}},
+\oauthor{\bsnm{Robinson}, \binits{B.H.}}:
+Complex v tmem70 deficiency results in mitochondrial nucleoid disorganization.
+Mitochondrion
+\textbf{11}
+(2011).
+doi:\doiurl{10.1016/j.mito.2010.09.008}
+\end{botherref}
+\endbibitem
+
 \end{thebibliography}
 
 \newcommand{\BMCxmlcomment}[1]{}
@@ -1062,6 +1128,66 @@ pp. \bfpage{1}--\blpage{6}
   <pubdate>2014</pubdate>
   <fpage>1</fpage>
   <lpage>-6</lpage>
+</bibl>
+
+<bibl id="B39">
+  <title><p>Enfermedades mitocondriales y biogénesis mitocondrial</p></title>
+  <aug>
+    <au><snm>Jiménez</snm><fnm>RM</fnm></au>
+  </aug>
+  <source>Universidad Autónoma de Madrid</source>
+  <pubdate>2013</pubdate>
+</bibl>
+
+<bibl id="B40">
+  <title><p>Desmin cytoskeleton linked to muscle mitochondrial distribution and
+  respiratory function</p></title>
+  <aug>
+    <au><snm>Milner</snm><fnm>D. J.</fnm></au>
+    <au><snm>Mavroidis</snm><fnm>M.</fnm></au>
+    <au><snm>Weisleder</snm><fnm>N.</fnm></au>
+    <au><snm>Capetanaki</snm><fnm>Y.</fnm></au>
+  </aug>
+  <source>Journal of Cell Biology</source>
+  <pubdate>2000</pubdate>
+  <volume>150</volume>
+</bibl>
+
+<bibl id="B41">
+  <title><p>Phosphoproteome analysis of functional mitochondria isolated from
+  resting human muscle reveals extensive phosphorylation of inner membrane
+  protein complexes and enzymes</p></title>
+  <aug>
+    <au><snm>Zhao</snm><fnm>X</fnm></au>
+    <au><snm>León</snm><fnm>IR</fnm></au>
+    <au><snm>Bak</snm><fnm>S</fnm></au>
+    <au><snm>Mogensen</snm><fnm>M</fnm></au>
+    <au><snm>Wrzesinski</snm><fnm>K</fnm></au>
+    <au><snm>Højlund</snm><fnm>K</fnm></au>
+    <au><snm>Jensen</snm><fnm>ON</fnm></au>
+  </aug>
+  <source>Molecular and Cellular Proteomics</source>
+  <pubdate>2011</pubdate>
+  <volume>10</volume>
+</bibl>
+
+<bibl id="B42">
+  <title><p>Complex V TMEM70 deficiency results in mitochondrial nucleoid
+  disorganization</p></title>
+  <aug>
+    <au><snm>Cameron</snm><fnm>JM</fnm></au>
+    <au><snm>Levandovskiy</snm><fnm>V</fnm></au>
+    <au><snm>MacKay</snm><fnm>N</fnm></au>
+    <au><snm>Ackerley</snm><fnm>C</fnm></au>
+    <au><snm>Chitayat</snm><fnm>D</fnm></au>
+    <au><snm>Raiman</snm><fnm>J</fnm></au>
+    <au><snm>Halliday</snm><fnm>W. H.</fnm></au>
+    <au><snm>Schulze</snm><fnm>A</fnm></au>
+    <au><snm>Robinson</snm><fnm>BH</fnm></au>
+  </aug>
+  <source>Mitochondrion</source>
+  <pubdate>2011</pubdate>
+  <volume>11</volume>
 </bibl>
 
 </refgrp>

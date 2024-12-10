@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.3)  10 DEC 2024 01:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.3)  10 DEC 2024 09:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,17 +475,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
-[6] [7]) (tex_files/resultados.tex [8]
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+[6] [7]) (tex_files/resultados.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
@@ -496,36 +496,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--60
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
-[11]) (tex_files/discusion.tex [12]) (tex_files/conclusiones.tex) (report.bbl
-[13]
+) (tex_files/discusion.tex [12]) (tex_files/conclusiones.tex [13]) (report.bbl
+[14]
 LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <7> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 292.
 
-) [14] 
+) [15] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (report.aux)
  ***********
@@ -541,13 +551,13 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: A0339D8FE28D3BDE38D472B489CEB6CD;2183.
  ) 
 Here is how much of TeX's memory you used:
- 10542 strings out of 474486
- 165253 string characters out of 5743286
- 1944542 words of memory out of 5000000
- 32595 multiletter control sequences out of 15000+600000
+ 10553 strings out of 474486
+ 165372 string characters out of 5743286
+ 1941542 words of memory out of 5000000
+ 32599 multiletter control sequences out of 15000+600000
  566252 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,10n,79p,899b,723s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,10n,79p,899b,721s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\jesus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Users/jesus/AppData/Local/Programs/MiKTeX2/fonts/type1/public/amsfo
 nts/cm/cmbx10.pfb><C:/Users/jesus/AppData/Local/Programs/MiKTeX2/fonts/type1/pu
@@ -565,9 +575,9 @@ ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jesus/AppData/Local/Programs/M
 iKTeX2/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jesus/AppData/Local/P
 rograms/MiKTeX2/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jesus/AppDa
 ta/Local/Programs/MiKTeX2/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on report.pdf (14 pages, 271197 bytes).
+Output written on report.pdf (15 pages, 276703 bytes).
 PDF statistics:
- 357 PDF objects out of 1000 (max. 8388607)
- 89 named destinations out of 1000 (max. 500000)
+ 376 PDF objects out of 1000 (max. 8388607)
+ 96 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,12 +2,17 @@
 \section{Resultados}
 
 
+\paragraph{Análisis de la Red} \mbox{}\\
+
 En el marco de este estudio, se obtuvieron inicialmente 48 genes asociados con el fenotipo mitocondrial desde la base de datos Human Phenotype Ontology (HPO). Estos genes se relacionaron con funciones celulares esenciales en la mitocondria, como la cadena respiratoria, la biogénesis mitocondrial y la regulación del metabolismo energético. Los genes fueron seleccionados con el objetivo de explorar su posible interrelación dentro de una red de interacciones de proteínas, utilizando la base de datos STRING.
 
 Al realizar el análisis de interacciones utilizando los identificadores de estos 48 genes, se observó que solo 38 genes interaccionaron entre sí dentro de la red generada. Este hallazgo sugirió que, aunque todos los genes descargados estaban asociados con el fenotipo mitocondrial, no todos ellos presentaron interacciones directas en el contexto de las proteínas mitocondriales. En particular, algunos genes no mostraron evidencia de interacción directa con otros genes seleccionados, lo que podría haber indicado que sus roles en la biología mitocondrial no dependían de interacciones proteicas directas o que interactuaban a través de mecanismos más complejos no reflejados en esta red.
 
+*Imagen red iniicial de nodos*
+
 Uno de los genes más relevantes en este análisis fue MYH7, que estaba relacionado con la miocardiopatía y era conocido por su papel en la función mitocondrial. Sin embargo, MYH7 no presentó interacciones con otros genes mitocondriales en esta red, lo que sugirió que su influencia en el fenotipo mitocondrial podría haber estado mediada por mecanismos independientes, tal vez a través de la regulación de procesos mitocondriales o por interacciones con otras proteínas no incluidas en la red de interacciones analizada.
 
+\paragraph{Clustering} \mbox{}\\
 
 Para profundizar en el análisis de la red obtenida, se han aplicado diferentes algoritmos de clustering con el objetivo de identificar comunidades o grupos de proteínas que interactúen más estrechamente entre sí. Los algoritmos utilizados fueron: Fast Greedy, Edge Betweenness, Walktrap, Infomap y Label Propagation, y se evaluaron mediante la métrica de modularidad, que mide la calidad de las particiones realizadas.
 \vspace{1em}
@@ -41,6 +46,9 @@ En el primer clúster se encontraron nodos como NDUFS7, NDUFAF1, NDUFB10, NDUFS6
 El segundo clúster contuvo como nodos más destacados MT-CO1, MT-ATP6, MT-ND6, MT-ND5. Este grupo pareció estar más enfocado en la respiración celular y la fosforilación oxidativa.
 
 El tercer clúster estuvo representado por elementos menos conectados, como por ejemplo: NDUFS2, TIMMDC1, NUBPL. Este clúster podría haber indicado que se estaban enfocando en procesos relacionados con la cadena de transporte de electrones.
+
+
+*Imagen sobre clustering* 
 
 El dendrograma generado mediante clustering jerárquico aportó una perspectiva adicional sobre cómo se relacionaban los genes seleccionados. Esta herramienta organizó los genes en una estructura jerárquica basada en sus similitudes funcionales, permitiendo observar con mayor claridad la proximidad o separación entre ellos dentro de la red de interacciones.
 
