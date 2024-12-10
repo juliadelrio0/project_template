@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.2)  10 DEC 2024 13:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.2)  10 DEC 2024 23:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -478,61 +478,81 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
+<figures/string_graph.png, id=197, 734.745pt x 680.5425pt>
+File: figures/string_graph.png Graphic file (type png)
+<use figures/string_graph.png>
+Package pdftex.def Info: figures/string_graph.png  used on input line 13.
+(pdftex.def)             Requested size: 288.8011pt x 267.49773pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+[9 <./figures/string_graph.png>]
+<figures/colored_Fast_Greedy.png, id=209, 481.8pt x 481.8pt>
+File: figures/colored_Fast_Greedy.png Graphic file (type png)
+<use figures/colored_Fast_Greedy.png>
+Package pdftex.def Info: figures/colored_Fast_Greedy.png  used on input line 57
+.
+(pdftex.def)             Requested size: 288.8011pt x 288.81021pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+
+ []
+
+[11 <./figures/colored_Fast_Greedy.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
-) (tex_files/discusion.tex [12]) (tex_files/conclusiones.tex [13]) (report.bbl
-[14]
+<figures/func_anal_res_genes_list.png, id=241, 722.7pt x 578.16pt>
+File: figures/func_anal_res_genes_list.png Graphic file (type png)
+<use figures/func_anal_res_genes_list.png>
+Package pdftex.def Info: figures/func_anal_res_genes_list.png  used on input li
+ne 118.
+(pdftex.def)             Requested size: 288.8011pt x 231.03935pt.
+[13 <./figures/func_anal_res_genes_list.png>]) (tex_files/discusion.tex
+[14]) (tex_files/conclusiones.tex) (report.bbl [15]
 LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <7> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 292.
 
-) [15] 
+ [16]) [17]
+
 enddocument/afterlastpage: lastpage setting LastPage.
 (report.aux)
  ***********
@@ -548,11 +568,11 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: A0339D8FE28D3BDE38D472B489CEB6CD;2183.
  ) 
 Here is how much of TeX's memory you used:
- 10555 strings out of 474486
- 165296 string characters out of 5743755
- 1943542 words of memory out of 5000000
- 32600 multiletter control sequences out of 15000+600000
- 566591 words of font info for 65 fonts, out of 8000000 for 9000
+ 10588 strings out of 474486
+ 166236 string characters out of 5743755
+ 1945542 words of memory out of 5000000
+ 32628 multiletter control sequences out of 15000+600000
+ 566885 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,10n,79p,899b,725s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\julia\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
@@ -573,9 +593,9 @@ pe1/public/amsfonts/cm/cmsy10.pfb><C:/Users/julia/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/julia/AppData/Local/Program
 s/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/julia/AppData/Loca
 l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on report.pdf (15 pages, 281567 bytes).
+Output written on report.pdf (17 pages, 1227865 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 96 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 404 PDF objects out of 1000 (max. 8388607)
+ 101 named destinations out of 1000 (max. 500000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 
